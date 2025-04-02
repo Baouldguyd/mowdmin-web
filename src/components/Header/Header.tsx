@@ -41,7 +41,7 @@ const Header = () => {
   });
 
   return (
-    <div className=" h-10 flex justify-between px-6 font-[inter-regular] font-bold  ">
+    <div className=" h-10 flex justify-between px-6 font-[inter-bold]   ">
       {/* Logo */}
       <div className="h-full">
         <Image src={Logo} alt="Logo" className="h-full w-10" />
@@ -85,7 +85,7 @@ const Header = () => {
 
           {/* Language Dropdown */}
           {openLanguages && (
-            <div className="absolute mt-2 bg-white shadow rounded-md w-full">
+            <div className="absolute mt-2 bg-transparent shadow rounded-md w-full">
               {languages.map((lang, index) => (
                 <div
                   key={index}

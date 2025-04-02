@@ -1,9 +1,10 @@
+import Homepage from "@/components/Homepage/Homepage"
 import Layout from "@/components/Layout/Layout"
 
 const Home = () => {
   return (
     <Layout>
-      Hi
+      <Homepage/>
     </Layout>
   )
 }

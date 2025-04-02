@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className=" grid grid-rows-1 pt-4 bg-blue-900 min-h-screen">
+    <div className=" grid grid-rows-1 pt-4  min-h-screen">
       <div className="">
         <Header />
       </div>

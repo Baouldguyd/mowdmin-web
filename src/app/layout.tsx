@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-      className=""
+      className=" font-[inter-regular]"
       att-vdb-init="true"
       >
         <main>{children}</main>
