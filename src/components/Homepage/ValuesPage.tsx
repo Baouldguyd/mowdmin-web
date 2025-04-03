@@ -40,7 +40,7 @@ const ValuesPage = () => {
           through charity and Baptism. Join us in making a difference through
           worship, learning, and generosity
         </p>
-        <div className=" flex gap-4 mx-auto">
+        <div className=" flex md:gap-8 gap-4 mx-auto">
           {values.map((value, index) => (
             <div key={index} className="">
               <div className=" border border-[#B3B3B3] rounded-full md:w-50 md:h-50 w-30 h-30 flex justify-center items-center">
@@ -58,7 +58,7 @@ const ValuesPage = () => {
           <Image src={crowd} alt="crowd" className=" w-full h-[250px]  md:h-70 rounded-md" />
           <div className=" h-[250px] md:h-70 absolute  top-10 left-10 w-full rounded-md ">
             <Image src={crowd} alt="crowd" className=" w-full h-full rounded-md" />
-            <div className=" absolute flex flex-col gap-4 top-0 p-4 bg-[#0000008a] rounded-md h-full ">
+            <div className=" absolute flex flex-col gap-4 top-0 p-4 bg-[#0000008a] rounded-md h-full w-full ">
             <p className=" w-[35%] md:text-2xl font-[inter-bold] text-[#fff]">
               One Voice, One Spirit, One Worship
             </p>

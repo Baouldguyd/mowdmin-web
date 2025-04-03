@@ -20,7 +20,7 @@ const JoinUs = () => {
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2475.203605835179!2d7.722115376479326!3d51.656108471847475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b97329f2813457%3A0x9bb67cb6fd55b9b!2sMowdministries%20e.V!5e0!3m2!1sen!2sng!4v1743572569301!5m2!1sen!2sng"
           //   width="800"
           //   height="450"
-          style={{ border: "0;", width: "100%", height:"80%" }}
+          style={{ border: "0", width: "100%", height:"80%" }}
           allowFullScreen={true}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"

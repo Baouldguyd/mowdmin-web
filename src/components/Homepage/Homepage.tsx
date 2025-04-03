@@ -4,6 +4,7 @@ import ValuesPage from './ValuesPage'
 import ChurchMinistries from './ChurchMinistries'
 import Founder from './Founder'
 import JoinUs from './JoinUs'
+import NewsLetter from './NewsLetter'
 
 const Homepage = () => {
   return (
@@ -13,8 +14,9 @@ const Homepage = () => {
         <ChurchMinistries/>
         <Founder/>
         <JoinUs/>
+        <NewsLetter/>
     </div>
   )
 }
 
-export default Homepage
+export default Homepage;
