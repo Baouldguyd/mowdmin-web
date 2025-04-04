@@ -9,7 +9,7 @@ import "./slider.css";
 import MuteButton from "@/assets/Icons/Buttons/MuteButton";
 
 const Heropage = () => {
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const [isMuted, setIsMuted] = useState<boolean>(true);
   return (
     <div className="min-h-[90svh] bg-[#000] relative">

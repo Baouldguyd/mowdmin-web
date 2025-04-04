@@ -23,5 +23,20 @@
   src: url("../assets/Fonts/Inter/Inter_18pt-ExtraBold.ttf");
 }
 
+@font-face {
+  font-family: "kalam-light";
+  src: url("../assets/Fonts/Kalam/Kalam-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "kalam-regular";
+  src: url("../assets/Fonts/Kalam/Kalam-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "kalam-bold";
+  src: url("../assets/Fonts/Kalam/Kalam-Bold.ttf") format("truetype");
+}
+
 
 
