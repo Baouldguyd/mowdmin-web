@@ -3,6 +3,7 @@ import EventsHeroPage from './EventsHeroPage'
 import Register from './Register'
 import Concert from './Concert'
 import ConcertPage from './ConcertPage'
+import Supper from './Supper'
 
 const Eventspage = () => {
   return (
@@ -10,6 +11,7 @@ const Eventspage = () => {
         <EventsHeroPage/>
         <Register/>
         <ConcertPage/>
+        <Supper/>
     </div>
   )
 }

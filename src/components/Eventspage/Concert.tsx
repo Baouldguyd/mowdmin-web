@@ -33,10 +33,10 @@ const Concert: React.FC = () => {
       <input type="tel" name="phoneNumber" placeholder="Phone number" onChange={handleChange} required className="w-full border p-2 rounded"/>
       <input type="email" name="email" placeholder="E-mail address" onChange={handleChange} required className="w-full border p-2 rounded"/>
 
-      <ReCAPTCHA
+      {/* <ReCAPTCHA
         sitekey="YOUR_GOOGLE_RECAPTCHA_SITE_KEY"
         onChange={() => setCaptchaVerified(true)}
-      />
+      /> */}
 
       <button type="submit" className="w-full bg-black text-white py-2 rounded">Submit</button>
     </form>

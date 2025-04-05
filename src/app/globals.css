@@ -39,4 +39,49 @@
 }
 
 
+.black-button {
+  background-color: #040725; /* deep navy */
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.black-button:hover {
+  background-color: #1a1aff; /* royal blue */
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(26, 26, 255, 0.3);
+}
+
+.red-button {
+  background-color: #ff0000; /* bright red */
+  color: white;
+  padding: 16px 36px;
+  border: none;
+  border-radius: 12px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 
+    background-color 0.4s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.red-button:hover {
+  background-color: #FF0000; /* deeper red */
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(255, 0, 0, 0.4);
+}
+
+.red-button:active {
+  transform: scale(0.97);
+}
 

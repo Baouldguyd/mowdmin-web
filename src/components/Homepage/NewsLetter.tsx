@@ -3,7 +3,7 @@ import background from "@/assets/Images/subscribeImgnew.jpg";
 import Image from "next/image";
 const NewsLetter = () => {
   return (
-    <div className=" h-[50vh] flex font-[inter-regular]   relative ">
+    <div className=" h-auto flex font-[inter-regular]   relative ">
       <Image src={background} alt="bg" className=" absolute top-0 h-full " />
       <div className="bg-[#04072599] z-[10]  w-full h-full flex justify-center items-center">
         <div className=" h-full md:w-[50%] md:h-[50%]  flex flex-col gap-6">
