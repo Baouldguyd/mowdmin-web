@@ -38,7 +38,7 @@ const Concert: React.FC = () => {
         onChange={() => setCaptchaVerified(true)}
       /> */}
 
-      <button type="submit" className="w-full bg-black text-white py-2 rounded">Submit</button>
+      <button type="submit" className="w-full bg-[#040725] black-button text-white py-2 rounded font-[inter-bold]">Submit</button>
     </form>
   );
 };

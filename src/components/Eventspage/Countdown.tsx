@@ -33,9 +33,9 @@ const Countdown: React.FC<CountdownProps> = ({ eventDate }) => {
   }, []);
 
   return (
-    <div className="text-center">
+    <div className="text-center w-auto ">
       <h2 className="text-lg font-bold">EVENTS BEGINS IN</h2>
-      <div className="flex justify-center space-x-4 mt-2 text-red-500 text-2xl font-[inter-bold]">
+      <div className="flex justify-center space-x-4 mt-2 text-red-500 text-2xl font-[inter-bold] flex-wrap">
         <div className=" p-4 rounded-full border border-[#B3B3B3] shadow-md">{String(timeLeft.days).padStart(2, "0")}<span className="block text-xs text-gray-500">Days</span></div>
         <div className=" py-4 px-6 rounded-full border border-[#B3B3B3] shadow-md">{String(timeLeft.hours).padStart(2, "0")}<span className="block text-xs text-gray-500">Hours</span></div>
         <div className=" p-4 rounded-full border border-[#B3B3B3] shadow-md">{String(timeLeft.minutes).padStart(2, "0")}<span className="block text-xs text-gray-500">Minutes</span></div>

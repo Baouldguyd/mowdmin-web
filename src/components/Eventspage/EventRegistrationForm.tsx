@@ -48,7 +48,7 @@ const EventRegistrationForm = () => {
           </div>
           
           <div className="flex justify-center md:justify-end">
-            <button type="submit" className="bg-black text-white px-6 py-2 rounded-md w-full md:w-auto">Submit</button>
+            <button type="submit" className="bg-[#040725] black-button text-white px-6 py-2 rounded-md w-full md:w-auto font-[inter-bold]">Submit</button>
           </div>
         </form>
       </div>

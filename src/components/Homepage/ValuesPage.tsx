@@ -67,7 +67,7 @@ const ValuesPage = () => {
               praise and God's presence fills the atmosphere. Let’s lift our
               voices, raise our hands, and worship together in faith and love.
             </p>
-            <button className=" py-3 px-4 w-30 md:mt-4 bg-[#FF0000] text-[#fff] text-[12px] rounded-md cursor-pointer">
+            <button className="  py-3 px-4 w-30 md:mt-4 bg-[#FF0000] text-[#fff] text-[12px] rounded-md cursor-pointer">
               Discover More
             </button>
             </div>

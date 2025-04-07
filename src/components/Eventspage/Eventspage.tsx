@@ -1,9 +1,11 @@
 import React from 'react'
 import EventsHeroPage from './EventsHeroPage'
 import Register from './Register'
-import Concert from './Concert'
 import ConcertPage from './ConcertPage'
 import Supper from './Supper'
+import Baptism from './Baptism'
+import PastEvents from './PastEvents'
+
 
 const Eventspage = () => {
   return (
@@ -12,8 +14,10 @@ const Eventspage = () => {
         <Register/>
         <ConcertPage/>
         <Supper/>
+        <Baptism />
+        <PastEvents/>
     </div>
   )
 }
 
-export default Eventspage
+export default Eventspage;

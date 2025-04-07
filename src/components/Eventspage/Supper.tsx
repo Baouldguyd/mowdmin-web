@@ -4,13 +4,13 @@ import pastors from "@/assets/Images/pastors.png"
 
 const Supper = () => {
   return (
-    <div className=" h-auto flex gap-6 px-4 justify-center my-4 ">
-     <div className=" max-w-4xl flex gap-6 px-4 justify-center h-[70%]  ">
+    <div className=" h-auto flex gap-6 px-4 justify-center my-20 ">
+     <div className=" max-w-4xl flex gap-6 px-4 justify-center h-[70%] flex-col md:flex-row  ">
          {/* Image */}
-      <div className="h-full  md:w-[50%]  w-full ">
-        <Image src={pastors} alt="" className=" rounded-md h-full w-full " />
+      <div className="h-full  md:w-[50%]  w-fit bg-green-300 mx-auto   ">
+        <Image src={pastors} alt="" className=" rounded-md h-full w-full  " />
       </div>
-      <div className=" h-full md:w-[50%] w-full ">
+      <div className=" h-full md:w-[50%] w-fit ">
         <h1 className=" text-center font-[inter-bold] text-lg md:text-2xl">THE LAST SUPPER</h1>
         <p className=" text-[12px] md:text-[15px] leading-4 md:leading-5 mb-6">
           At the beginning of the new month and of course following the program

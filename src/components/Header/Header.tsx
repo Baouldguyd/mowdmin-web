@@ -47,9 +47,9 @@ const Header = () => {
         <Image src={Logo} alt="Logo" className="h-full w-10" />
       </div>
 
-      <div className="flex gap-4 items-center">
+      <div className="flex gap-4 items-center ">
         {/* Navigation */}
-        <nav>
+        <nav className="hidden md:block">
           <ul className="inline-flex gap-6 justify-around ">
             {navItems.map((item, index) => {
               const activeLink = currentPath === item.href;

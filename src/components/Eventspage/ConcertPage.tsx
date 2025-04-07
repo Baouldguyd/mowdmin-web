@@ -1,13 +1,15 @@
 import Countdown from "@/components/Eventspage/Countdown";
 import Concert from "@/components/Eventspage/Concert";
+import Image from "next/image";
+import peopleImg from "@/assets/Images/people-festival-bg.png"
 
 const ConcertPage = () => {
   return (
     <div
-      className="min-h-screen flex items-center justify-center bg-cover bg-center p-6"
-      style={{ backgroundImage: "url('/concert-bg.jpg')" }}
+      className="min-h-screen relative flex items-center justify-center bg-cover bg-center p-6"
     >
-      <div className="max-w-4xl w-full bg-opacity-90 bg-black text-white p-8 rounded-lg">
+      <Image src={peopleImg} alt="" className=" h-full w-fit absolute top-0 " />
+      <div className="max-w-4xl w-full bg-opacity-90 bg-[#040725AD] z-10 text-white p-8 rounded-lg">
         <h1 className="text-4xl font-[inter-bold] text-center mb-4 ">
           Stay tuned for the next concert.
         </h1>
@@ -46,7 +48,7 @@ const ConcertPage = () => {
             </ul>
           </div>
 
-          <div className="mt-6 bg-white text-black p-6 rounded-lg shadow-lg md:w-[50%] w-full">
+          <div className="mt-6 bg-white w-auto text-black p-6 rounded-lg shadow-lg md:w-[50%] ">
             <Countdown eventDate="2025-12-25T00:00:00" />
             <p className="text-center text-gray-600 my-4">
               Please fill out the registration form here
