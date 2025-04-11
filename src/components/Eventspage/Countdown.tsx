@@ -19,7 +19,7 @@ const Countdown: React.FC<CountdownProps> = ({ eventDate }) => {
       };
     } else {
       timeLeft = { days: 0, hours: 0, minutes: 0, seconds: 0 };
-    }
+    }+
     return timeLeft;
   };
 

@@ -19,16 +19,20 @@ const BookStore = () => {
       </h2>
 
       {/* Carousel Section */}
-      <div className="flex space-x-4 overflow-x-auto pb-4">
-        {books.map((book) => (
-          <div
+      <div className="flex space-x-4 overflow-x-auto pb-4 w-[80vw] mx-auto">
+        {books.map((book, index) => {
+         return(
+          book.bookInfo.map((book) => (
+            <div
             key={book.id}
             className={`min-w-[160px] cursor-pointer rounded-md overflow-hidden shadow-md border ${selectedBook?.id === book.id ? 'border-red-500' : 'border-transparent'}`}
             onClick={() => handleBookClick(book)}
           >
             <Image src={book.image} alt={book.title} width={160} height={220} className="w-full object-cover" />
           </div>
-        ))}
+          )
+         ))  
+        })}
       </div>
 
       {/* Selected Book Info */}
