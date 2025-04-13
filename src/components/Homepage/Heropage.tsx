@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import BackgroundVideo from "./BackgroundVideo";
 import PlayButton from "@/assets/Icons/Buttons/PlayButton";
-import { PauseCircleIcon } from "lucide-react";
 import PauseButton from "@/assets/Icons/Buttons/PauseButton";
 import VolumeButton from "@/assets/Icons/Buttons/VolumeButton";
 import "./slider.css";
