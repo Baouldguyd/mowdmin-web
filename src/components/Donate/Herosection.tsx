@@ -6,7 +6,7 @@ import ArrowTopRight from "@/assets/Icons/Arrow/ArrowTopRight";
 
 export default function HeroSection() {
   return (
-    <div className=" relative bg-red-400 w-full h-[90svh]">
+    <div className=" relative  w-full h-[90svh]">
       <Image
         src={donateBg} // Save your image in `public/images/hero-man.png`
         alt="Donation hero"

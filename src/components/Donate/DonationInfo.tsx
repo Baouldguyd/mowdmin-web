@@ -1,8 +1,8 @@
+"use client";
 import ArrowTopRight from "@/assets/Icons/Arrow/ArrowTopRight";
 import Image from "next/image";
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
-
 
 const DonationInfo = () => {
   const boxes = [
@@ -18,6 +18,18 @@ const DonationInfo = () => {
       title: "86%",
       info: "No completed projects, making a positive impact across the world",
     },
+  ];
+
+  const donateImages = [
+    "/donate/donate (1).jpg",
+    "/donate/donate (2).jpg",
+    "/donate/donate (3).jpg",
+    "/donate/donate (4).jpg",
+    "/donate/donate (5).jpg",
+    "/donate/donate (6).jpg",
+    "/donate/donate (7).jpg",
+    "/donate/donate (8).jpg",
+    "/donate/donate (9).jpg",
   ];
 
   const aboutUs = [
@@ -57,12 +69,14 @@ const DonationInfo = () => {
         </div>
       </div>
       {/* About us */}
-      <div className=" p-6  h-auto flex gap-4 px-8">
+      <div className=" p-6  h-auto flex gap-4 px-8 my-20">
         {/* Images div */}
-        <div className=" w-[50%]">
-          <div className=" h-10 w-10">
-            <Image src={""} alt="" />
-          </div>
+        <div className=" w-[50%] flex gap-4 flex-wrap justify-center">
+          {donateImages.map((image, index) => (
+            <div key={index} className=" h-60 w-60 ">
+              <Image src={image} width={240} height={150} alt="image" className="h-full w-full" />
+            </div>
+          ))}
         </div>
         {/* ABout us DIv */}
         <div className=" w-[50%] flex flex-col gap-4">
