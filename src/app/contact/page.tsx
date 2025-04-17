@@ -1,10 +1,12 @@
+"use client";
+import ContactPage from '@/components/Contact/ContactPage';
 import Layout from '@/components/Layout/Layout'
-import React from 'react'
+
 
 const Contact = () => {
   return (
     <Layout>
-        Contact
+        <ContactPage/>
     </Layout>
   )
 }

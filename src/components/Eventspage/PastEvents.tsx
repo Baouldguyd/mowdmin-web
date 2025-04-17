@@ -28,7 +28,7 @@ const PastEvents = () => {
   ]
 
   return (
-    <section className=" relative py-8 w-[80vw] h-[60vh] mx-auto my-8">
+    <section className=" relative py-8 w-[80vw] min-h-[60vh] mx-auto my-8">
       <h2 className="text-center text-2xl md:text-3xl font-[inter-bold] mb-6">
         Some of our <span className="text-red-600">Past Events</span>
       </h2>

@@ -21,7 +21,9 @@ const Header = () => {
     { name: "Shops", href: "/shops" },
     { name: "Gallery", href: "/gallery" },
     { name: "Donate", href: "/donate" },
-    { name: "Partnership/Contact Us", href: "/contact" },
+    { name: "Contact", href: "/contact" },
+    { name: "Partnership", href: "/partnership" },
+
   ];
 
   const languages = [

@@ -6,7 +6,7 @@ import peopleImg from "@/assets/Images/people-festival-bg.png"
 const ConcertPage = () => {
   return (
     <div
-      className="min-h-screen relative flex items-center justify-center bg-cover bg-center p-6"
+      className="min-h-screen relative flex items-center justify-center bg-cover bg-center min-md:p-6"
     >
       <Image src={peopleImg} alt="" className=" h-full w-fit absolute top-0 " />
       <div className="max-w-4xl w-full bg-opacity-90 bg-[#040725AD] z-10 text-white p-8 rounded-lg">
@@ -14,7 +14,7 @@ const ConcertPage = () => {
           Stay tuned for the next concert.
         </h1>
 
-        <div className=" flex gap-4 justify-center flex-col md:flex-row px-4">
+        <div className=" flex gap-4 justify-center flex-col md:flex-row min-md:px-4 ">
           <div className=" h-full md:w-[50%] w-full">
             <ul className="h-full flex flex-col justify-between gap-6 font-[inter-regular]">
               <li>
@@ -48,7 +48,7 @@ const ConcertPage = () => {
             </ul>
           </div>
 
-          <div className="mt-6 bg-white w-auto text-black p-6 rounded-lg shadow-lg md:w-[50%] ">
+          <div className="mt-6 bg-white w-auto text-black min-md:p-6 rounded-lg shadow-lg md:w-[50%] ">
             <Countdown eventDate="2025-12-25T00:00:00" />
             <p className="text-center text-gray-600 my-4">
               Please fill out the registration form here

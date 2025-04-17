@@ -42,7 +42,6 @@ const Purpose = () => {
           <div className={`flex ${item.bg} ${item.titleColor}`} key={index}>
             <div className=" p-8 text-left w-[450px] h-full flex flex-col gap-4" >
             {item.info && <div className=" w-[20%] bg-[#FFFFFF] h-[1px]"></div> }
-
               <p className={`text-[2.5rem] font-[inter-bold] ${item.info && `text-left`}`}>{item.title}</p>
               {item.info && <p className=" ">{item.info}</p>}
               {item.purpose &&

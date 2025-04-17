@@ -1,3 +1,4 @@
+"use client";
 import React from 'react'
 import EventsHeroPage from './EventsHeroPage'
 import Register from './Register'
@@ -9,7 +10,7 @@ import PastEvents from './PastEvents'
 
 const Eventspage = () => {
   return (
-    <div className='flex flex-col '>
+    <div className='flex flex-col h-auto '>
         <EventsHeroPage/>
         <Register/>
         <ConcertPage/>

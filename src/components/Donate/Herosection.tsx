@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { FaArrowRight, FaArrowUpRightDots } from "react-icons/fa6";
-// import { ArrowRight } from "lucide-react";
 import donateBg from "@/assets/Images/donateBg.jpg";
 import ArrowTopRight from "@/assets/Icons/Arrow/ArrowTopRight";
 
