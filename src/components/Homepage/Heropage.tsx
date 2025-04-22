@@ -20,10 +20,10 @@ const Heropage = () => {
           setIsPlaying={setIsPlaying}
         />
       </div>
-      <div className=" h-[18%] bg-[#04072533] w-full absolute bottom-5">
-        <div className="p-6 flex justify-between">
+      <div className=" min-h-[18%] bg-[#04072533] w-full absolute bottom-5">
+        <div className="p-6 max-sm:flex max-sm:flex-col flex justify-between ">
           {/* Text */}
-          <div className=" w-[70%]">
+          <div className=" min-md:w-[70%] max-sm:text-center">
             <p className=" text-white text-3xl font-semibold">
               JESUS CHRIST LOVES YOU
             </p>
@@ -34,7 +34,7 @@ const Heropage = () => {
             </p>
           </div>
           {/* Video Play Controls */}
-          <div className="  h-full w-[30%] my-auto flex items-center">
+          <div className="  h-full min-md:w-[30%] my-auto flex items-center">
             <button
               onClick={() => {
                 setIsPlaying(!isPlaying);

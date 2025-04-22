@@ -1,7 +1,7 @@
 const Worship = () => {
   return (
     <svg
-      width="83"
+      width="40"
       height="70"
       viewBox="0 0 83 70"
       fill="none"

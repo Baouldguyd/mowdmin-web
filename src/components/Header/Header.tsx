@@ -11,6 +11,7 @@ import French from "@/assets/Icons/Language/French.png";
 import German from "@/assets/Icons/Language/Germany.png";
 import DropDown from "@/assets/Icons/Language/DropDown";
 import DropUp from "@/assets/Icons/Language/DropUp";
+import HamburgerIcon from "@/assets/Icons/Hamburger";
 
 const Header = () => {
   const router = useRouter();
@@ -23,7 +24,6 @@ const Header = () => {
     { name: "Donate", href: "/donate" },
     { name: "Contact", href: "/contact" },
     { name: "Partnership", href: "/partnership" },
-
   ];
 
   const languages = [
@@ -35,6 +35,7 @@ const Header = () => {
   const [selectedLang, setSelectedLang] = useState(languages[0]); // Default language
   const [openLanguages, setOpenLanguages] = useState<boolean>(false);
   const [currentPath, setCurrentPath] = useState("");
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
 
   useEffect(() => {
     if (typeof window !== undefined) {
@@ -55,11 +56,13 @@ const Header = () => {
           <ul className="inline-flex gap-6 justify-around ">
             {navItems.map((item, index) => {
               const activeLink = currentPath === item.href;
-              return(
+              return (
                 <li
                   key={index}
                   onClick={() => router.push(item.href)}
-                  className={`cursor-pointer ${activeLink ? " underline text-[#FFFFFF]" : "text-[#CFCFCF]"}`}
+                  className={`cursor-pointer  ${
+                    activeLink ? " underline text-[#FFFFFF]" : "text-[#CFCFCF]"
+                  }`}
                 >
                   {item.name}
                 </li>
@@ -69,7 +72,7 @@ const Header = () => {
         </nav>
 
         {/* Language Selector (Custom Dropdown) */}
-        <div className="relative ">
+        <div className="relative border border-[#5D5D5D] rounded-md p-2">
           {/* Toggle Dropdown */}
           <button
             onClick={() => setOpenLanguages(!openLanguages)}
@@ -105,6 +108,33 @@ const Header = () => {
                   />
                 </div>
               ))}
+            </div>
+          )}
+        </div>
+        <div className=" flex items-center min-md:hidden relative">
+          <button onClick={()=> setOpenMenu(!openMenu)} className=" cursor-pointer">
+            <HamburgerIcon />
+          </button>
+          {openMenu && (
+            <div className="  bg-[#f6f2f21b] p-4 rounded-md absolute right-0 top-10 ">
+              <ul className="flex flex-col gap-2 justify-center text-center ">
+                {navItems.map((item, index) => {
+                  const activeLink = currentPath === item.href;
+                  return (
+                    <li
+                      key={index}
+                      onClick={() => router.push(item.href)}
+                      className={`cursor-pointer ${
+                        activeLink
+                          ? " underline text-[#FFFFFF]"
+                          : "text-[#CFCFCF]"
+                      }`}
+                    >
+                      {item.name}
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
           )}
         </div>

@@ -13,4 +13,9 @@ export interface Book {
   description: string;
   image: string;
   bookLanguage: string;
+  buyNow: string;
+  hardCoverLink: string;
+  pdfLink: string;
+  softCoverLink: string;
+
 }

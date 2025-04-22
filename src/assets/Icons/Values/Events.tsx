@@ -1,7 +1,7 @@
 const Events = () => {
   return (
     <svg
-      width="75"
+      width="40"
       height="75"
       viewBox="0 0 75 75"
       fill="none"

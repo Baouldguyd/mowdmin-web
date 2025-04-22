@@ -1,7 +1,7 @@
 const Baptism = () => {
   return (
     <svg
-      width="62"
+      width="40"
       height="78"
       viewBox="0 0 62 78"
       fill="none"

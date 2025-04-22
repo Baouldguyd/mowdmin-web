@@ -37,7 +37,7 @@ const ChurchMinistries = () => {
     },
   ];
   return (
-    <div className=" h-[90svh] flex flex-col mt-16 px-4 ">
+    <div className="min-h-[90svh] flex flex-col mt-16 px-4 ">
       {/* Knowledge */}
       <div className=" h-[30%]  bg-[#fff]  gap-2 grid md:grid-cols-[1fr_1fr] grid-rows-[1fr_1fr]">
         <div className=" ">
@@ -48,14 +48,14 @@ const ChurchMinistries = () => {
             Explore our church ministries
           </p>
         </div>
-        <div className="">
+        <div className=" mb-8">
           <p className=" text-[15px]">
             Discover inspirational books and albums filled with the Holy Spirit,
             designed to uplift and strengthen your faith. We offer a wide range
             of products through which we believe the Holy Spirit can touch lives
             and meet every need.
           </p>
-          <button className=" bg-[#FF0000] text-[#fff] px-4 py-2 rounded-md text-[12px] mt-6">
+          <button className=" red-button bg-[#FF0000] text-[#fff] px-4 py-2 rounded-md text-[12px] mt-6">
             Buy Now
           </button>
         </div>

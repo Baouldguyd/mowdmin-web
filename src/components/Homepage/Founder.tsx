@@ -35,13 +35,13 @@ const Founder = () => {
           </div>
         ))}
       </div>
-      <div className=" flex gap-6 p-2 w-full justify-center">
+      <div className=" flex max-sm:flex-col gap-6 p-2 w-full justify-center">
         <Image
           src={founderandWife}
           alt=""
-          className="h-full rounded-md w-[50%] md:w-[400px] md:h-[400px] "
+          className="h-full rounded-md w-[50%] md:w-[400px] md:h-[400px] max-sm:mx-auto "
         />
-        <div className=" w-[50%] my-auto ">
+        <div className=" min-md:w-[50%] my-auto ">
           <p className=" text-[12px] md:text-[15px] leading-7 md:leading-10 mb-6">
             Born in Cotonou, Benin Republic, Rev. MAURILLE BAMIGBOLA OSSE is the
             President and Founder of Mowdministries {"("}Maurille Osse Worldwide
@@ -53,7 +53,7 @@ const Founder = () => {
             wonders of God testify about his teaching. He is happily married to
             Ruth and they received three blessed children from God.
           </p>
-          <button className=" cursor-pointer text-[#fff] bg-[#040725]  rounded-md py-3 px-4 md:px-7 md:py-2 text-[12px] md:text-[14.5px] ">
+          <button className=" black-button cursor-pointer text-[#fff] bg-[#040725]  rounded-md py-3 px-4 min-md:px-7 min-md:py-2 text-[12px] max-sm:mx-auto max-sm:flex min-md:text-[14.5px] ">
             Further
           </button>
         </div>

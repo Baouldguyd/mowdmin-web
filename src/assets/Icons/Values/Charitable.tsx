@@ -1,7 +1,7 @@
 const Charitable = () => {
   return (
     <svg
-      width="83"
+      width="50"
       height="64"
       viewBox="0 0 83 64"
       fill="none"
