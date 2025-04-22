@@ -39,7 +39,7 @@ const ChurchMinistries = () => {
   return (
     <div className="min-h-[90svh] flex flex-col mt-16 px-4 ">
       {/* Knowledge */}
-      <div className=" h-[30%]  bg-[#fff]  gap-2 grid md:grid-cols-[1fr_1fr] grid-rows-[1fr_1fr]">
+      <div className=" h-[30%]  bg-[#fff]  gap-2 grid md:grid-cols-[1fr_1fr] grid-rows-[1fr_1fr] min-lg:px-8">
         <div className=" ">
           <p className=" text-[#FF0000] text-[12px] font-[inter-extrabold] w-full">
             Knowledge and expertise

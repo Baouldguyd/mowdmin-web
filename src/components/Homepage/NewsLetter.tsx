@@ -6,7 +6,7 @@ const NewsLetter = () => {
     <div className=" h-auto  flex font-[inter-regular]   relative ">
       <Image src={background} alt="bg" className=" absolute top-0 h-full " />
       <div className="bg-[#04072599] z-[10]  w-full h-full flex justify-center items-center">
-        <div className=" h-full max-sm:py-10 md:w-[50%] md:h-[50%]  flex flex-col gap-6">
+        <div className=" h-full py-5 max-sm:py-10 md:w-[50%] md:h-[50%]  flex flex-col gap-6">
           <p className=" text-4xl max-sm:text-2xl text-[#fff] font-[inter-bold] text-center mt-8 ">
             Subscribe to Our Church Newsletter!
           </p>
