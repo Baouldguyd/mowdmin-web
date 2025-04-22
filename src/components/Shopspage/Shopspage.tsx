@@ -4,7 +4,7 @@ import BookStore from './Bookstore'
 
 const Shopspage = () => {
   return (
-    <div className=''>
+    <div className='flex flex-col h-auto '>
         <ShopsHeroPage />
         <BookStore/>
     </div>

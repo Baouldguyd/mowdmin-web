@@ -48,17 +48,17 @@ const DonationInfo = () => {
   return (
     <div className="min-h-[100svh] flex flex-col">
       {/* boxes */}
-      <div className=" h-auto bg-[#F8F8F8] flex gap-2  ">
+      <div className=" h-auto bg-[#F8F8F8] flex gap-2 flex-wrap justify-center">
         {boxes.map((item, index) => (
           <div className=" flex">
-            <div className=" p-10 text-center w-[384px] h-full " key={index}>
+            <div className=" p-10 text-center min-md:w-[384px] h-full " key={index}>
               <p className=" text-[4rem] font-[inter-bold]  ">{item.title}</p>
               <p className=" text-[#00000099]">{item.info}</p>
             </div>
-            <div className=" h-[30%] my-auto flex w-[1px] bg-[#CFCFCF]"></div>
+            <div className=" h-[30%] my-auto flex w-[1px] bg-[#CFCFCF] max-sm:hidden"></div>
           </div>
         ))}
-        <div className=" p-10 text-left h-full bg-[#040725] flex flex-col gap-4">
+        <div className=" p-10 text-left h-auto bg-[#040725] flex flex-col gap-4">
           <div className="w-[30%] h-[1px] bg-[#fff]"></div>
           <p className=" text-[28px] font-[inter-bold] text-[#fff]  ">
             Our Goal Is To Help The Needy.
@@ -69,9 +69,9 @@ const DonationInfo = () => {
         </div>
       </div>
       {/* About us */}
-      <div className=" p-6  h-auto flex gap-4 px-8 my-20">
+      <div className=" min-md:p-6  h-auto flex gap-4 px-8 my-20 max-sm:flex-col">
         {/* Images div */}
-        <div className=" w-[50%] flex gap-4 flex-wrap justify-center">
+        <div className=" min-md:w-[50%] flex gap-4 flex-wrap justify-center">
           {donateImages.map((image, index) => (
             <div key={index} className=" h-60 w-60 ">
               <Image src={image} width={240} height={150} alt="image" className="h-full w-full" />
@@ -79,8 +79,8 @@ const DonationInfo = () => {
           ))}
         </div>
         {/* ABout us DIv */}
-        <div className=" w-[50%] flex flex-col gap-4">
-          <p className=" text-[#ff0000] text-[15px] md:text-[15px] font-[inter-bold]">
+        <div className=" min-md:w-[50%] flex flex-col gap-4">
+          <p className=" text-[#ff0000] text-[20px] min-md:text-[25px] font-[inter-bold] max-sm:text-center">
             About us
           </p>
           <h2 className=" text-[#040725] text-xl font-[inter-bold]">

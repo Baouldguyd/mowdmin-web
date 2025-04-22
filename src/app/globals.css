@@ -24,6 +24,11 @@
 }
 
 @font-face {
+  font-family: "inter-semibold";
+  src: url("../assets/Fonts/Inter/Inter_18pt-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "kalam-light";
   src: url("../assets/Fonts/Kalam/Kalam-Light.ttf") format("truetype");
 }

@@ -56,9 +56,9 @@ const MediaGallery = () => {
 
   return (
     <div className="p-6 bg-gray-900 text-white min-h-screen flex flex-col gap-4">
-      <div className="flex items-center gap-3 mb-6">
+      <div className="flex items-center gap-3 mb-6 mt-14">
         <FaYoutube size={28} color="red" />
-        <h2 className="text-2xl font-semibold">YouTube</h2>
+        <h2 className="text-2xl font-[inter-bold]">YouTube</h2>
       </div>
 
       <div className="flex gap-6 mb-4 border-b border-gray-700 pb-2">

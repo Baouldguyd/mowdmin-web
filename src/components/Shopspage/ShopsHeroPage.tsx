@@ -4,7 +4,7 @@ import shopsBg from "@/assets/Images/shopsBg.png";
 
 const ShopsHeroPage = () => {
   return (
-    <div className=" bg-[#040725E5] max-sm:h-[50svh] flex ">
+    <div className=" bg-[#040725E5] relative max-sm:h-[50svh] flex  ">
       <div className=" flex h-full my-auto relative justify-around w-full  ">
         <div className=" w-[27rem] z-[100]  flex-col md:justify-between lg:justify-around flex max-sm:gap-4  my-auto mx-6 h-[70%] ">
           <h1 className=" text-[#fff] font-[inter-bold] text-5xl leading-14 max-sm:text-4xl ">
@@ -21,7 +21,7 @@ const ShopsHeroPage = () => {
         <Image src={shopsBg} alt="" className=" w-[40%] my-auto  mr-6 h-fit max-sm:hidden " />
         <div className="bg-[#040725E5] h-full w-full z-[10] absolute"> </div>
       </div>
-    </div>
+    </div> 
   );
 };
 

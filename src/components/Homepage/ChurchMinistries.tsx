@@ -75,7 +75,7 @@ const ChurchMinistries = () => {
                 marginBottom: "5px"
               }}
             />
-            <div className=" flex flex-col justify-between">
+            <div className=" flex flex-col justify-between max-sm:mb-8">
               <p className=" text-[13px] text-[#3A3A3A]">{book.description}</p>
               <button className=" font-[inter-bold] text-[12px] flex items-center mt-2 cursor-pointer">
                 View More <ArrowTopRight />
