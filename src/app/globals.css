@@ -98,3 +98,11 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0px !important;
+}

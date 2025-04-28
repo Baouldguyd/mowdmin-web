@@ -18,7 +18,7 @@ const Footer = () => {
                 className="w-16 mb-4"
               />
               <h2 className="text-lg font-[inter-semibold]">
-                Mowdministries e.V (The Gospel of Redemption)
+                Mowdministries e.V (Gospel of Salvation)
               </h2>
             </div>
             <p className="text-sm mt-2 italic text-[#CFCFCF]">

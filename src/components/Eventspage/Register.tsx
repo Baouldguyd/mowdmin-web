@@ -30,9 +30,11 @@ const Register = () => {
                 Please scroll down the page or click the button below to visit
                 our YouTube page to catch the plethora of past events.
               </p>
-              <button className=" text-[#fff]  mx-auto px-6 py-3 text-[12px] red-button rounded-md bg-[#ff0000] cursor-pointer min-md:text-lg font-[inter-bold]" >
-                Encore
-              </button>
+              <a href="https://www.youtube.com/@mowdministries.e.vgospelofsalv" target="_blank" className="w-full flex justify-center">
+                <button className=" text-[#fff]  mx-auto px-6 py-3 text-[12px] red-button rounded-md bg-[#ff0000] cursor-pointer min-md:text-lg font-[inter-bold] ">
+                  Encore
+                </button>
+              </a>
             </div>
           </div>
         </div>
