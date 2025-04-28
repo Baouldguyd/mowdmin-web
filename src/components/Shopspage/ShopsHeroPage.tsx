@@ -4,9 +4,10 @@ import shopsBg from "@/assets/Images/shopsBg.png";
 
 const ShopsHeroPage = () => {
   return (
-    <div className=" bg-[#040725E5] relative max-sm:h-[50svh] flex  ">
-      <div className=" flex h-full my-auto relative justify-around w-full  ">
-        <div className=" w-[27rem] z-[100]  flex-col md:justify-between lg:justify-around flex max-sm:gap-4  my-auto mx-6 h-[70%] ">
+    <div className=" bg-[#040725E5] relative max-sm:min-h-[50svh] flex min-h-[70svh]  ">
+      <div className="bg-[#040725E5] h-full w-full z-[10] absolute"> </div>
+      <div className=" flex min-md:h-[70svh] my-auto  relative justify-around w-full max-sm:p-12 max-md:p-8 ">
+        <div className=" w-[27rem] z-[100]  flex-col md:justify-between lg:justify-around flex max-sm:gap-4  my-auto mx-6 h-[70%] max-md:mt-14 max-sm:mt-6 ">
           <h1 className=" text-[#fff] font-[inter-bold] text-5xl leading-14 max-sm:text-4xl ">
             Get inspirational book and album filled with the Holy Spirit.
           </h1>
@@ -15,13 +16,18 @@ const ShopsHeroPage = () => {
             Spirit can meet all types of needs.
           </p>
           <div className="">
-            <button className=" red-button mt-6 font-[inter-bold] ">Buy Now</button>
+            <button className=" red-button mt-6 font-[inter-bold] ">
+              Buy Now
+            </button>
           </div>
         </div>
-        <Image src={shopsBg} alt="" className=" w-[40%] my-auto  mr-6 h-fit max-sm:hidden " />
-        <div className="bg-[#040725E5] h-full w-full z-[10] absolute"> </div>
+        <Image
+          src={shopsBg}
+          alt=""
+          className=" w-[40%] my-auto  mr-6 h-fit max-sm:hidden "
+        />
       </div>
-    </div> 
+    </div>
   );
 };
 

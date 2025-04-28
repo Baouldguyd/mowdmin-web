@@ -1,9 +1,10 @@
 
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { FaYoutube } from "react-icons/fa";
+import { YoutubeVideosResp } from "@/types/YoutubeResp";
 
 const videoData = [
   {
@@ -53,6 +54,23 @@ const videoData = [
 
 const MediaGallery = () => {
   const [tab, setTab] = useState<"videos" | "photos">("videos");
+  const [videos, setVideos] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function getVideos() {
+      try {
+        const res = await fetch("/api/youtube");
+        const fetchedVideos = await res.json();
+        setVideos(fetchedVideos);
+      } catch (error) {
+        console.error("Error fetching videos", error);
+      } finally {
+        setLoading(false); // Done loading
+      }
+    }
+    getVideos();
+  }, []);
 
   return (
     <div className="p-6 bg-gray-900 text-white min-h-screen flex flex-col gap-4">
@@ -85,25 +103,36 @@ const MediaGallery = () => {
       </div>
 
       {tab === "videos" && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {videoData.map((video) => (
-            <div key={video.id} className="relative group">
-              <a href={video.url} target="_blank" rel="noopener noreferrer">
-                <Image
-                  src={video.thumbnail}
-                  alt={video.title}
-                  width={400}
-                  height={225}
-                  className="rounded-lg object-cover w-full"
-                />
-                <div className="absolute inset-0 bg-transparent bg-opacity-50 flex items-end justify-start  transition pb-6 ">
-                <span className=" bg-[#0000008f] w-auto flex items-center gap-2 px-2 rounded-bl-md py-2"> <p className="font-[inter-bold] text-[12px] md:text-[15px]">Watch on Youtube</p> <FaYoutube size={40} color="red" className="" /></span>
-                </div>
-              </a>
-              <p className="mt-2 text-sm text-center">{video.title}</p>
-            </div>
-          ))}
-        </div>
+         <div className="flex flex-wrap gap-4">
+         {loading ? (
+           // 👇 Show skeleton while loading
+           Array.from({ length: 6 }).map((_, index) => (
+             <div
+               key={index}
+               className="w-[300px] h-[250px] bg-gray-200 animate-pulse rounded-md"
+             >
+               <div className="h-[200px] bg-gray-300 rounded-t-md" />
+               <div className="h-4 mt-2 mx-2 bg-gray-300 rounded" />
+             </div>
+           ))
+         ) : (
+           // 👇 Show videos when loaded
+           videos.map((video: YoutubeVideosResp) => (
+             <div key={video.id.videoId} className="w-[300px]">
+               <iframe
+                 width="300"
+                 height="200"
+                 src={`https://www.youtube.com/embed/${video.id.videoId}`}
+                 title={video.snippet.title}
+                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                 allowFullScreen
+                 className="rounded-t-md"
+               />
+               <p className="mt-2 text-sm font-medium">{video.snippet.title}</p>
+             </div>
+           ))
+         )}
+       </div>
       )}
 
       {tab === "photos" && (

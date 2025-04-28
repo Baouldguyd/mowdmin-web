@@ -1,16 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 import { books } from "@/data/books";
 import { Book } from "@/types/Book";
 import Image from "next/image";
 
 const BookStore = () => {
+  const searchParams = useSearchParams();
+  const bookid = searchParams.get("bookid");
+
   const [selectedBook, setSelectedBook] = useState<Book | null>(null);
-  const[selectedBookType, setSelectedBookType] = useState<string>("")
+  const [selectedBookType, setSelectedBookType] = useState<string>("");
+
+  useEffect(() => {
+    if (bookid) {
+      const foundBook = books
+        .flatMap((category) => category.bookInfo)
+        .find((book) => book.id === Number(bookid));
+      if (foundBook) {
+        setSelectedBook(foundBook);
+      }
+    }
+  }, [bookid]);
 
   const handleBookClick = (book: Book) => {
     setSelectedBook(book);
+    console.log(book.id);
   };
 
   return (
@@ -62,14 +78,33 @@ const BookStore = () => {
             <p className="italic text-gray-600">By {selectedBook.author}</p>
             <p className="mt-4 text-gray-700">{selectedBook.description}</p>
             <div className=" flex gap-4 mt-6 items-center">
-            <select name="" id="" className=" border rounded-md p-3" onChange={(e)=> setSelectedBookType(e.target.value)} value={selectedBookType} >
-              <option value="hardCover">Hard Cover</option>
-              <option value="pdf">PDF</option>
-              <option value="softCover">Soft Cover</option>
-            </select>
-            <a href={selectedBookType === "hardCover" ? selectedBook.hardCoverLink : selectedBookType === "pdf" ? selectedBook.pdfLink : selectedBook.softCoverLink} target="_blank" rel="noopener noreferrer">
-              <button className=" black-button"> {selectedBook.buyNow}  </button>
-            </a>
+              <select
+                name=""
+                id=""
+                className=" border rounded-md p-3"
+                onChange={(e) => setSelectedBookType(e.target.value)}
+                value={selectedBookType}
+              >
+                <option value="hardCover">Hard Cover</option>
+                <option value="pdf">PDF</option>
+                <option value="softCover">Soft Cover</option>
+              </select>
+              <a
+                href={
+                  selectedBookType === "hardCover"
+                    ? selectedBook.hardCoverLink
+                    : selectedBookType === "pdf"
+                    ? selectedBook.pdfLink
+                    : selectedBook.softCoverLink
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className=" black-button">
+                  {" "}
+                  {selectedBook.buyNow}{" "}
+                </button>
+              </a>
             </div>
           </div>
         </div>

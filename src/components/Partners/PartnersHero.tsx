@@ -4,7 +4,7 @@ import partnersBg from "@/assets/Images/partnersBg.jpg";
 
 const PartnersHero = () => {
   return (
-    <div className=" relative  w-full h-[90svh]">
+    <div className=" relative  w-full min-md:h-[90svh]">
       <Image
         src={partnersBg} // Save your image in `public/images/hero-man.png`
         alt="Donation hero"
@@ -14,7 +14,7 @@ const PartnersHero = () => {
         <div className=" h-full  flex md:items-center">
           {/* Left Text */}
           <div className=" md:h-[60%] my-auto min-lg:w-[50%]  ">
-            <h1 className="text-4xl md:text-[3.5rem] font-bold leading-tight mb-6">
+            <h1 className="text-4xl md:text-[3.5rem] font-[inter-bold] max-md:mt-8 leading-tight mb-6">
               Helping people thrive through purpose-driven and inspiring
               partnership
             </h1>

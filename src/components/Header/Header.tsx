@@ -116,8 +116,8 @@ const Header = () => {
             <HamburgerIcon />
           </button>
           {openMenu && (
-            <div className="  bg-[#f6f2f21b] p-4 rounded-md absolute right-0 top-10 ">
-              <ul className="flex flex-col gap-2 justify-center text-center ">
+            <div className="  bg-[#000] p-6 rounded-md absolute right-0 top-10 ">
+              <ul className="flex flex-col gap-4 justify-center text-center ">
                 {navItems.map((item, index) => {
                   const activeLink = currentPath === item.href;
                   return (
