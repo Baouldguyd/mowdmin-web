@@ -14,8 +14,13 @@ export async function GET() {
 
   console.log("Fetching new videos from YouTube API");
 
-  const API_KEY = "AIzaSyCCxGKitMUbki0RfUYHOiuccoIQlHD5Tlg";
-  const CHANNEL_ID = "UCLEcq4XDtqcWSDys7_fmvYw";
+  const API_KEY = process.env.YOUTUBE_DATA_API_KEY;
+  const CHANNEL_ID = process.env.YOUTUBE_CHANNEL_ID;
+  if (!API_KEY || !CHANNEL_ID) {
+    console.error("API key or Channel ID is missing");
+    return NextResponse.json({ error: "API key or Channel ID is missing" });
+  }
+  
   const maxResults = 10;
 
   const url = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=${maxResults}`;
