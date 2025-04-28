@@ -1,9 +1,11 @@
+"use client";
 import Baptism from "@/assets/Icons/Values/Baptism";
 import Charitable from "@/assets/Icons/Values/Charitable";
 import Events from "@/assets/Icons/Values/Events";
 import Worship from "@/assets/Icons/Values/Worship";
 import crowd from "@/assets/Images/crowd.png";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const ValuesPage = () => {
   const values = [
@@ -28,6 +30,12 @@ const ValuesPage = () => {
       link: "",
     },
   ];
+
+  const router = useRouter()
+
+  const handleDiscoverMore = () =>{
+router.push("/events")
+  }
   return (
     <div className=" flex flex-col bg-[#fff] gap-4 h-auto">
       <div className=" h-auto  my-auto flex flex-col gap-6 md:px-6 md:mt-8">
@@ -67,7 +75,7 @@ const ValuesPage = () => {
               praise and God's presence fills the atmosphere. Let’s lift our
               voices, raise our hands, and worship together in faith and love.
             </p>
-            <button className="  py-3 px-4 w-30 md:mt-4 bg-[#FF0000] text-[#fff] text-[13px] rounded-md cursor-pointer">
+            <button onClick={handleDiscoverMore} className="  py-3 px-4 w-30 md:mt-4 bg-[#FF0000] text-[#fff] text-[13px] rounded-md cursor-pointer">
               Discover More
             </button>
             </div>

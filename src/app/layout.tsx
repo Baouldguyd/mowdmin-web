@@ -1,6 +1,7 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-
+import ClientWrapper from "@/components/ClientWrapper";
 
 export const metadata: Metadata = {
   title: "Mowd Ministries",
@@ -14,10 +15,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-      className=" font-[inter-regular]"
-      att-vdb-init="true"
-      >
+      <body className="font-[inter-regular]" att-vdb-init="true">
+        {/* <ClientWrapper /> */}
         <main>{children}</main>
       </body>
     </html>

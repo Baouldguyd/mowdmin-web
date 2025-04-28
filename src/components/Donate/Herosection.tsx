@@ -17,7 +17,7 @@ export default function HeroSection() {
             <p className="text-sm text-[#94864E] font-semibold uppercase mb-2">
               Charitable deeds
             </p>
-            <h1 className="text-4xl min-md:text-[3.5rem] font-bold leading-tight mb-6">
+            <h1 className="text-4xl min-lg:text-[3.5rem] font-bold leading-tight mb-6">
               Only by supporting one <br />
               another can we make the <br />
               world a better place.

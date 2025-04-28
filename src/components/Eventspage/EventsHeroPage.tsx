@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import eventBg from "@/assets/Images/closeupBg.png";
 
 const EventsHeroPage: React.FC = () => {
-  // 👉 Set your fixed event date here (format: YYYY-MM-DDTHH:MM:SS)
+  // Set your fixed event date here (format: YYYY-MM-DDTHH:MM:SS)
   const eventDate = "2025-05-01T12:00:00";
 
   const calculateTimeLeft = () => {
