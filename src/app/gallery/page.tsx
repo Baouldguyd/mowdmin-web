@@ -1,3 +1,4 @@
+"use client";
 import GalleryPage from '@/components/Gallery/GalleryPage';
 import Layout from '@/components/Layout/Layout'
 import React from 'react'
