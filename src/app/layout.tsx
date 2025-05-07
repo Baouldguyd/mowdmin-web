@@ -5,6 +5,9 @@ import ClientWrapper from "@/components/ClientWrapper";
 
 export const metadata: Metadata = {
   title: "Mowd Ministries",
+  icons:{
+    icon: "/favicon.png",
+  },
   description: "Get Connected to Jesus",
 };
 
