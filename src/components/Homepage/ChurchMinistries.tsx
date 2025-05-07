@@ -6,8 +6,27 @@ import christians from "@/assets/Images/christians.png";
 import Image from "next/image";
 import ArrowTopRight from "@/assets/Icons/Arrow/ArrowTopRight";
 import { useRouter } from "next/navigation";
-
+import { fadeIn } from "@/variants";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 const ChurchMinistries = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true }); // animate only once
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0 },
+  };
+
   const books = [
     {
       image: ebendbildes,
@@ -51,19 +70,32 @@ const ChurchMinistries = () => {
   const handleViewMore = (bookid: number) => {
     router.push(`/shops?bookid=${bookid}`);
   };
+
   return (
     <div className="min-h-[90svh] flex flex-col mt-16 px-4 ">
       {/* Knowledge */}
       <div className=" h-[30%]  bg-[#fff]  gap-2 grid md:grid-cols-[1fr_1fr] grid-rows-[1fr_1fr] min-lg:px-8">
-        <div className=" ">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, x: -50 }} // start 50px to the left
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className=" "
+        >
           <p className=" text-[#FF0000] max-sm:text-[12px] text-[20px] font-[inter-extrabold] w-full">
             Knowledge and expertise
           </p>
           <p className=" font-bold text-[2.5rem] text-[#000] font-[inter-extrabold]">
             Explore our church ministries
           </p>
-        </div>
-        <div className=" mb-8">
+        </motion.div>
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, x: 50 }} // start 50px to the left
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className=" mb-8"
+        >
           <p className=" text-[15px]">
             Discover inspirational books and albums filled with the Holy Spirit,
             designed to uplift and strengthen your faith. We offer a wide range
@@ -76,12 +108,19 @@ const ChurchMinistries = () => {
           >
             Explore
           </button>
-        </div>
+        </motion.div>
       </div>
       {/* books */}
-      <div className=" h-[70%]  flex gap-4 flex-wrap justify-around">
+      <motion.div
+      ref={ref}
+      variants={containerVariants}
+      initial="hidden"
+      animate={isInView ? "visible" : "hidden"}
+      className=" h-[70%]  flex gap-4 flex-wrap justify-around">
         {books.map((book, index) => (
-          <div
+          <motion.div
+            variants={cardVariants}
+            transition={{ duration: 0.5, ease: "easeOut" }}
             key={index}
             className="w-40 h-[80%] my-auto hover:border hover:border-[#B3B3B3] cursor-pointer"
           >
@@ -107,9 +146,9 @@ const ChurchMinistries = () => {
                 View More <ArrowTopRight />
               </button>
             </div>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -62,7 +62,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="w-[40rem]  mx-auto font-[inter-regular] bg-white p-10 rounded-xl shadow-md space-y-6 text-[#000]"
+      className="min-md:w-[40rem]  mx-auto font-[inter-regular] bg-white p-10 rounded-xl shadow-md space-y-6 text-[#000]"
     >
       <h2 className="text-2xl font-[inter-bold] text-center">
         Donate by Bank Transfer

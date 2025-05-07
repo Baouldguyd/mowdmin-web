@@ -3,8 +3,29 @@ import ArrowTopRight from "@/assets/Icons/Arrow/ArrowTopRight";
 import Image from "next/image";
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
+import { motion } from "framer-motion";
+import { fadeIn } from "@/variants";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 
 const DonationInfo = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true }); // animate only once
+
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, x: -50 },
+    visible: { opacity: 1, x: 0 },
+  };
+
   const boxes = [
     {
       title: "15+",
@@ -48,17 +69,34 @@ const DonationInfo = () => {
   return (
     <div className="min-h-[100svh] flex flex-col">
       {/* boxes */}
-      <div className=" h-auto bg-[#F8F8F8] flex gap-2 flex-wrap justify-center">
+      <motion.div
+        ref={ref}
+        variants={containerVariants}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+        className=" h-auto bg-[#F8F8F8] flex gap-2 flex-wrap justify-center"
+      >
         {boxes.map((item, index) => (
-          <div className=" flex">
-            <div className=" p-10 text-center min-md:w-[384px] h-full " key={index}>
+          <motion.div
+            variants={cardVariants}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className=" flex"
+          >
+            <div
+              className=" p-10 text-center min-md:w-[384px] h-full "
+              key={index}
+            >
               <p className=" text-[4rem] font-[inter-bold]  ">{item.title}</p>
               <p className=" text-[#00000099]">{item.info}</p>
             </div>
             <div className=" h-[30%] my-auto flex w-[1px] bg-[#CFCFCF] max-sm:hidden"></div>
-          </div>
+          </motion.div>
         ))}
-        <div className=" p-10 text-left h-auto bg-[#040725] flex flex-col gap-4">
+        <motion.div
+          variants={cardVariants}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className=" p-10 text-left h-auto bg-[#040725] flex flex-col gap-4"
+        >
           <div className="w-[30%] h-[1px] bg-[#fff]"></div>
           <p className=" text-[28px] font-[inter-bold] text-[#fff]  ">
             Our Goal Is To Help The Needy.
@@ -66,20 +104,38 @@ const DonationInfo = () => {
           <p className=" text-[#fff]">
             Become a Partner <ArrowTopRight />
           </p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
       {/* About us */}
       <div className=" min-md:p-6  h-auto flex gap-4 px-8 my-20 max-sm:flex-col">
         {/* Images div */}
-        <div className=" min-md:w-[50%] flex gap-4 flex-wrap justify-center">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, x: -50 }} // start 50px to the left
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className=" min-md:w-[50%] flex gap-4 flex-wrap justify-center"
+        >
           {donateImages.map((image, index) => (
             <div key={index} className=" h-60 w-60 ">
-              <Image src={image} width={240} height={150} alt="image" className="h-full w-full" />
+              <Image
+                src={image}
+                width={240}
+                height={150}
+                alt="image"
+                className="h-full w-full"
+              />
             </div>
           ))}
-        </div>
+        </motion.div>
         {/* ABout us DIv */}
-        <div className=" min-md:w-[50%] flex flex-col gap-4">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, x: 50 }} // start 50px to the left
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className=" min-md:w-[50%] flex flex-col gap-4"
+        >
           <p className=" text-[#ff0000] text-[20px] min-md:text-[25px] font-[inter-bold] max-sm:text-center">
             About us
           </p>
@@ -95,7 +151,7 @@ const DonationInfo = () => {
               <p>{item}</p>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

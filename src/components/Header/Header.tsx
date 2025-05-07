@@ -12,6 +12,7 @@ import German from "@/assets/Icons/Language/Germany.png";
 import DropDown from "@/assets/Icons/Language/DropDown";
 import DropUp from "@/assets/Icons/Language/DropUp";
 import HamburgerIcon from "@/assets/Icons/Hamburger";
+import { motion } from "framer-motion";
 
 const Header = () => {
   const router = useRouter();
@@ -111,12 +112,40 @@ const Header = () => {
             </div>
           )}
         </div>
-        <div className=" flex items-center min-md:hidden relative">
-          <button onClick={()=> setOpenMenu(!openMenu)} className=" cursor-pointer">
-            <HamburgerIcon />
+        <div className="  flex items-center min-md:hidden relative">
+          <button
+            onClick={() => setOpenMenu(!openMenu)}
+            className="  cursor-pointer relative w-8 h-6 flex items-center justify-center"
+          >
+            {/* Top bar */}
+            <motion.span
+              animate={openMenu ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
+              className="absolute w-6 h-[2px] bg-white"
+              transition={{ duration: 0.3 }}
+            />
+            {/* Middle bar */}
+            <motion.span
+              animate={openMenu ? { opacity: 0 } : { opacity: 1 }}
+              className="absolute w-6 h-[2px] bg-white"
+              style={{ top: "50%", transform: "translateY(-50%)" }}
+              transition={{ duration: 0.3 }}
+            />
+            {/* Bottom bar */}
+            <motion.span
+              animate={openMenu ? { rotate: -45, y: -8 } : { rotate: 0, y: 16 }}
+              className="absolute w-6 h-[2px] bg-white"
+              transition={{ duration: 0.3 }}
+            />
           </button>
+
           {openMenu && (
-            <div className="  bg-[#000] p-6 rounded-md absolute right-0 top-10 ">
+            <motion.div
+              initial={{ opacity: 0, y: -10, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -10, scale: 0.95 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="   bg-[#000] p-6 rounded-md absolute right-0 top-10 "
+            >
               <ul className="flex flex-col gap-4 justify-center text-center ">
                 {navItems.map((item, index) => {
                   const activeLink = currentPath === item.href;
@@ -135,7 +164,7 @@ const Header = () => {
                   );
                 })}
               </ul>
-            </div>
+            </motion.div>
           )}
         </div>
       </div>

@@ -1,9 +1,12 @@
 "use client";
 import { useForm } from "@formspree/react";
 import { Loader } from "lucide-react";
-import React, { useState } from "react";
+import React, { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 const PartnersForm = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true }); // animate only once
   const [state, handleSubmit] = useForm("xqaqarbq");
 
   return (
@@ -26,98 +29,111 @@ const PartnersForm = () => {
               Please fill out the partnership form here
             </h2>
 
-            <form
-              onSubmit={handleSubmit}
-              className="space-y-6 bg-white p-6 rounded-lg shadow-md"
+            <motion.div
+              ref={ref}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}} // animate when in view
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <div>
-                <label className="block font-medium mb-1" htmlFor="fullName">
-                  Full name:
-                </label>
-                <input
-                  name="fullName"
-                  id="fullName"
-                  type="text"
-                  required
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-
-              <div>
-                <label className="block font-medium mb-1" htmlFor="fullAddress">
-                  Full address:
-                </label>
-                <input
-                  name="fullAddress"
-                  id="fullAddress"
-                  type="text"
-                  required
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-
-              <div>
-                <label className="block font-medium mb-1" htmlFor="phoneNumber">
-                  Phone number:
-                </label>
-                <input
-                  name="phoneNumber"
-                  id="phoneNumber"
-                  type="tel"
-                  required
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-
-              <div>
-                <label className="block font-medium mb-1" htmlFor="email">
-                  E-mail address:
-                </label>
-                <input
-                  name="email"
-                  id="email"
-                  type="email"
-                  required
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-              </div>
-
-              <div>
-                <label className="block font-medium mb-1" htmlFor="news">
-                  News:
-                </label>
-                <textarea
-                  name="news"
-                  id="news"
-                  rows={4}
-                  className="w-full border border-gray-300 rounded px-3 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
-                ></textarea>
-              </div>
-
-              {/* Simulated reCAPTCHA */}
-              <div className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  name="captchaChecked"
-                  id="captcha"
-                  className="w-5 h-5"
-                />
-                <label htmlFor="captcha" className="text-sm">
-                  I'm not a robot
-                </label>
-              </div>
-
-              <button
-              style={{
-                display: "flex",
-                justifyContent: "center",
-              }}
-                type="submit"
-                className="w-full bg-[#040725] text-white cursor-pointer font-[inter-bold] py-4 rounded hover:bg-gray-800 transition"
+              <form
+                onSubmit={handleSubmit}
+                className="space-y-6 bg-white p-6 rounded-lg shadow-md"
               >
-                {state.submitting ? <Loader /> : "Submit"}
-              </button>
-            </form>
+                <div>
+                  <label className="block font-medium mb-1" htmlFor="fullName">
+                    Full name:
+                  </label>
+                  <input
+                    name="fullName"
+                    id="fullName"
+                    type="text"
+                    required
+                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    className="block font-medium mb-1"
+                    htmlFor="fullAddress"
+                  >
+                    Full address:
+                  </label>
+                  <input
+                    name="fullAddress"
+                    id="fullAddress"
+                    type="text"
+                    required
+                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+
+                <div>
+                  <label
+                    className="block font-medium mb-1"
+                    htmlFor="phoneNumber"
+                  >
+                    Phone number:
+                  </label>
+                  <input
+                    name="phoneNumber"
+                    id="phoneNumber"
+                    type="tel"
+                    required
+                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="block font-medium mb-1" htmlFor="email">
+                    E-mail address:
+                  </label>
+                  <input
+                    name="email"
+                    id="email"
+                    type="email"
+                    required
+                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+
+                <div>
+                  <label className="block font-medium mb-1" htmlFor="news">
+                    News:
+                  </label>
+                  <textarea
+                    name="news"
+                    id="news"
+                    rows={4}
+                    className="w-full border border-gray-300 rounded px-3 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  ></textarea>
+                </div>
+
+                {/* Simulated reCAPTCHA */}
+                <div className="flex items-center space-x-2">
+                  <input
+                    type="checkbox"
+                    name="captchaChecked"
+                    id="captcha"
+                    className="w-5 h-5"
+                  />
+                  <label htmlFor="captcha" className="text-sm">
+                    I'm not a robot
+                  </label>
+                </div>
+
+                <button
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                  }}
+                  type="submit"
+                  className="w-full bg-[#040725] text-white cursor-pointer font-[inter-bold] py-4 rounded hover:bg-gray-800 transition"
+                >
+                  {state.submitting ? <Loader /> : "Submit"}
+                </button>
+              </form>
+            </motion.div>
             {state.succeeded && (
               <p className="text-green-500 text-center mt-4">
                 Thank you for your interest in partnering with us! We will get

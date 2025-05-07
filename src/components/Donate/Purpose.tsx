@@ -1,8 +1,15 @@
+"use client";
 import { Divide } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import { useInView, motion } from "framer-motion";
+import { fadeIn } from "@/variants";
+import { useRef } from "react";
 
 const Purpose = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true }); // animate only once
+
   const boxes = [
     {
       title: "Purpose Of Donations",
@@ -36,13 +43,27 @@ const Purpose = () => {
     },
   ];
   return (
-    <div className=" h-auto">
-      <div className=" w-full flex gap-4 flex-wrap justify-center">
+    <div className=" h-auto m-8">
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}} // animate when in view
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className=" w-full flex gap-4 flex-wrap justify-center"
+      >
         {boxes.map((item, index) => (
           <div className={`flex ${item.bg} ${item.titleColor}`} key={index}>
-            <div className=" p-8 text-left w-[450px] h-full flex flex-col gap-4" >
-            {item.info && <div className=" w-[20%] bg-[#FFFFFF] h-[1px]"></div> }
-              <p className={`text-[2.5rem] font-[inter-bold] ${item.info && `text-left`}`}>{item.title}</p>
+            <div className=" p-8 text-left w-[450px] h-full flex flex-col gap-4">
+              {item.info && (
+                <div className=" w-[20%] bg-[#FFFFFF] h-[1px]"></div>
+              )}
+              <p
+                className={`text-[2.5rem] font-[inter-bold] ${
+                  item.info && `text-left`
+                }`}
+              >
+                {item.title}
+              </p>
               {item.info && <p className=" ">{item.info}</p>}
               {item.purpose &&
                 item.purpose.map((purpose) => (
@@ -52,7 +73,7 @@ const Purpose = () => {
             <div className=" h-[30%] my-auto flex w-[1px] bg-[#CFCFCF]"></div>
           </div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

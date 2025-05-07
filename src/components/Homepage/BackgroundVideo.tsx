@@ -36,7 +36,7 @@ const BackgroundVideo: React.FC<Player> = ({
     <div className="relative w-full min-md:min-h-screen h-[50svh]">
       <ReactPlayer
         ref={playerRef}
-        url="https://vid-cdn.website-editor.net/s/ec397ec3dcdd429fb15a940d37d92e42/videos/t9JcnH9iR9mNb6HHNW0A_Gebet+f%C3%BCr+Deutschland.p-v.mp4?Expires=1745862820&Signature=WH7zgYyNPBAemZOwqiFUw2yWEqrsEaGuDH4bSQiIHyQQyzUFgVPbZWTDrPlXxY1YLloSRHRZEU-BybEQOmM0Q0p8WF5UOeDya30mJYbrIBMzVUn-HHf~gxTI6laTv1dsFQpi~lXOoQTv1EeTu~Si5eQ7sRw4AmOInRLSJKEWNe66ebyScAoPiymHswjTzHlenBM6QpJFZBuksbsmIAv6j8ZsXuoLzHYDW7SOd9KJLPcYJoj2VCotu7ZvajdVIlcHByyd1JtXzV2yeOmA3T-Bt0r2IiptKh7Zd5w9wL68G7C~itSx~T6cn-iVL4F86hR~cql1IsvBqAPxBuv1z65ZNg__&Key-Pair-Id=K2NXBXLF010TJW" // Replace with your video URL
+        url="https://vid-cdn.website-editor.net/s/ec397ec3dcdd429fb15a940d37d92e42/videos/t9JcnH9iR9mNb6HHNW0A_Gebet+f%C3%BCr+Deutschland.p-v.mp4?Expires=1748668581&Signature=Sd6lMoR4JGU8HgZzmsDJjxC4~1Gn0s5uacAVQJitBk3zUohHgSCKKAWpcfooz4TYKCH6iz2-zJoDJmv~lB1B3ac1By9YPi22dsmZkQgp-itrwOy1hpz-mvo1WoKffo7Jy-ljDCj9Wie-FG0wGX6lUW798UmxRCsEwFkA46I1-hx~7QEM5d97w2iGezAbFYoEetAiWKsr3fjMIv3qEgC8soYTqBcmq3qiJnaXQZJBGTCcRhwzvcBB0kuGu-s-gH6Fhz~6bKyWqX-OOV6uRZSvAIJjLyEFYyB6Mv7aL~yI3RWateTF9nrCF30mCXSAt-xkGMDiU1TTu934-XuAQy0HeA__&Key-Pair-Id=K2NXBXLF010TJW" // Replace with your video URL
         playing={isPlaying}
         loop
         muted={isMuted}
@@ -45,7 +45,7 @@ const BackgroundVideo: React.FC<Player> = ({
         height="100%"
         className="absolute top-0 left-0 object-cover"
       />
-      <Suspense fallback={null}></Suspense>
+      <Suspense fallback={<div>Loading...</div>}></Suspense>
     </div>
   );
 };

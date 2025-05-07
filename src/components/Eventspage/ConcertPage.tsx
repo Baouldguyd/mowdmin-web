@@ -1,9 +1,16 @@
+"use client";
 import Countdown from "@/components/Eventspage/Countdown";
 import Concert from "@/components/Eventspage/Concert";
 import Image from "next/image";
 import peopleImg from "@/assets/Images/people-festival-bg.png"
+import { useRef } from "react";
+import { useInView, motion } from "framer-motion";
 
 const ConcertPage = () => {
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true }); // animate only once
+  
   return (
     <div
       className="min-h-screen relative flex items-center justify-center bg-cover bg-center min-md:p-6"
@@ -48,13 +55,18 @@ const ConcertPage = () => {
             </ul>
           </div>
 
-          <div className="mt-6 bg-white w-auto text-black min-md:p-6 rounded-lg shadow-lg md:w-[50%] ">
+          <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}} // animate when in view
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mt-6 bg-white w-auto text-black min-md:p-6 rounded-lg shadow-lg md:w-[50%] ">
             <Countdown eventDate="2025-12-25T00:00:00" />
             <p className="text-center text-gray-600 my-4">
               Please fill out the registration form here
             </p>
             <Concert />
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

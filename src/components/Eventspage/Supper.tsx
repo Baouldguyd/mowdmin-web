@@ -2,10 +2,19 @@
 import Image from "next/image";
 import React from "react";
 import pastors from "@/assets/Images/pastors.png";
-
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 const Supper = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true }); // animate only once
   return (
-    <div className=" h-auto flex gap-6 px-4 justify-center my-20 ">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}} // animate when in view
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className=" h-auto flex gap-6 px-4 justify-center my-20 "
+    >
       <div className=" max-w-4xl flex gap-6 px-4 justify-center h-[70%] flex-col md:flex-row  ">
         {/* Image */}
         <div className="h-full  md:w-[50%]  w-fit bg-green-300 mx-auto   ">
@@ -31,14 +40,18 @@ const Supper = () => {
             <p>ID: 891 2138 4589</p>
             <p>Passcode: twfHq8h</p>
           </div>
-          <a href="https://us05web.zoom.us/j/89121384589?pwd=wVkJn7myqUvPWuD2YnFtjZbZ8r6t18.1#success" target="_blank" className="w-full flex justify-center">
+          <a
+            href="https://us05web.zoom.us/j/89121384589?pwd=wVkJn7myqUvPWuD2YnFtjZbZ8r6t18.1#success"
+            target="_blank"
+            className="w-full flex justify-center"
+          >
             <button className=" black-button cursor-pointer px-8 py-3 bg-[#040725] rounded-md text-[12px] text-[#fff] font-[inter-bold] mt-2 mx-auto flex">
               Join Zoom Link
             </button>
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

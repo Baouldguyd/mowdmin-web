@@ -1,8 +1,13 @@
+"use client";
 import Image from "next/image";
 import donateBg from "@/assets/Images/donateBg.jpg";
 import ArrowTopRight from "@/assets/Icons/Arrow/ArrowTopRight";
 
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 export default function HeroSection() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true }); // animate only once
   return (
     <div className=" relative  w-full min-md:h-[90svh] h-auto bg-red-600">
       <Image
@@ -13,7 +18,13 @@ export default function HeroSection() {
       <section className="bg-[#040725CC] text-white py-16 px-6 md:px-20 relative min-md:h-full ">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-1 items-center gap-12">
           {/* Left Text */}
-          <div className=" min-md:mt-20">
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}} // animate when in view
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className=" min-md:mt-20"
+          >
             <p className="text-sm text-[#94864E] font-semibold uppercase mb-2">
               Charitable deeds
             </p>
@@ -42,7 +53,7 @@ export default function HeroSection() {
                 {/* <ArrowRight className="w-4 h-4" /> */}
               </button>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Image */}
           <div className=""></div>

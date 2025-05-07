@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
+import { useInView, motion } from "framer-motion";
 
 const activities = {
   "2022": [
@@ -86,7 +87,8 @@ const activities = {
 
 const CharityActivities = () => {
   const [activeYear, setActiveYear] = useState<keyof typeof activities>("2022");
-
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true }); // animate only once
   return (
     <section className="py-16 px-6 md:px-20">
       <h2 className="text-3xl md:text-4xl font-[inter-bold] text-center mb-8">
@@ -114,7 +116,14 @@ const CharityActivities = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {activities[activeYear].length > 0 ? (
           activities[activeYear].map((img, idx) => (
-            <div key={idx} className="text-center">
+            <motion.div
+              ref={ref}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}} // animate when in view
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              key={idx}
+              className="text-center"
+            >
               <div className="rounded-lg overflow-hidden mb-4 ">
                 <Image
                   src={img.src}
@@ -125,10 +134,8 @@ const CharityActivities = () => {
                 />
               </div>
               <h3 className="font-semibold text-lg">Donation {activeYear}</h3>
-              <p className="text-gray-600 text-sm w-[70%] mx-auto">
-               {img.alt}
-              </p>
-            </div>
+              <p className="text-gray-600 text-sm w-[70%] mx-auto">{img.alt}</p>
+            </motion.div>
           ))
         ) : (
           <p className="col-span-full text-center text-gray-500">

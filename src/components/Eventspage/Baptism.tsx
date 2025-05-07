@@ -1,11 +1,14 @@
 "use client";
 import { useForm } from "@formspree/react";
 import { Loader } from "lucide-react";
+import { useInView, motion } from "framer-motion";
+import { useRef } from "react";
 
 
 const Baptism = () => {
   const [state, handleSubmit] = useForm("xkgrgdbe");
-
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true }); // animate only once
   return (
     <div className="bg-[#F8F8F8] text-center py-8 px-4 sm:py-12 sm:px-8 lg:px-20 my-14">
       <h1 className="text-2xl sm:text-3xl font-[inter-bold] mb-4">
@@ -45,6 +48,12 @@ const Baptism = () => {
           the baptism course or to be baptized, please fill out the form. Send
           us your details and we will contact you to arrange an appointment.
         </p>
+
+    <motion.div 
+    ref={ref}
+    initial={{ opacity: 0, y: 50 }}
+    animate={isInView ? { opacity: 1, y: 0 } : {}} // animate when in view
+    transition={{ duration: 0.8, ease: "easeOut" }}>
 
         <form
           onSubmit={handleSubmit}
@@ -150,6 +159,7 @@ const Baptism = () => {
             </button>
           </div>
         </form>
+    </motion.div>
         {state.succeeded && (
             <p className="text-green-500 text-center mt-4">
                 Thank you for your registration! We will contact you soon.

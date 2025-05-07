@@ -10,9 +10,9 @@ const Donationspage = () => {
     <div>
       <HeroSection />
       <DonationInfo />
-      {/* <CharityActivities />
+      <CharityActivities />
       <Support />
-      <Purpose/> */}
+      <Purpose/>
     </div>
   );
 };
