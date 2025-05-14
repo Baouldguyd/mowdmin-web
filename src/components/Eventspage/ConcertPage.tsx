@@ -2,19 +2,16 @@
 import Countdown from "@/components/Eventspage/Countdown";
 import Concert from "@/components/Eventspage/Concert";
 import Image from "next/image";
-import peopleImg from "@/assets/Images/people-festival-bg.png"
+import peopleImg from "@/assets/Images/people-festival-bg.png";
 import { useRef } from "react";
 import { useInView, motion } from "framer-motion";
 
 const ConcertPage = () => {
-
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // animate only once
-  
+
   return (
-    <div
-      className="min-h-screen relative flex items-center justify-center bg-cover bg-center min-md:p-6"
-    >
+    <div className="min-h-screen relative flex items-center justify-center bg-cover bg-center min-md:p-6">
       <Image src={peopleImg} alt="" className=" h-full w-fit absolute top-0 " />
       <div className="max-w-4xl w-full bg-opacity-90 bg-[#040725AD] z-10 text-white p-8 rounded-lg">
         <h1 className="text-4xl font-[inter-bold] text-center mb-4 ">
@@ -56,11 +53,12 @@ const ConcertPage = () => {
           </div>
 
           <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}} // animate when in view
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mt-6 bg-white w-auto text-black min-md:p-6 rounded-lg shadow-lg md:w-[50%] ">
+            ref={ref}
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}} // animate when in view
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="mt-6 bg-white w-auto text-black min-md:p-6 rounded-lg shadow-lg md:w-[50%] "
+          >
             <Countdown eventDate="2025-12-25T00:00:00" />
             <p className="text-center text-gray-600 my-4">
               Please fill out the registration form here
