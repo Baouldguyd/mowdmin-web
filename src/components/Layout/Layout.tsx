@@ -12,37 +12,30 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     const getLang = async () => {
       const lang = await fetchLang();
-      const userLang = lang.split("-")[0]; // Get primary language
+      const userLang = lang.split("-")[0]; // Get the first language code
+      console.log(userLang);
       setLangCode(userLang);
+
+      console.log(lang);
+      console.log("the user lang is", userLang);
     };
+
     getLang();
   }, []);
 
-  // Trigger translation once langCode is set and widget is ready
   useEffect(() => {
-    if (langCode === "en") return;
-
-    const interval = setInterval(() => {
-      const iframe = document.querySelector("iframe.goog-te-banner-frame");
-      const select = document.querySelector<HTMLSelectElement>(".goog-te-combo");
-
-      if (select) {
-        select.value = langCode;
-        select.dispatchEvent(new Event("change"));
-        clearInterval(interval);
-      }
-    }, 500);
-
-    return () => clearInterval(interval);
+    if (langCode !== 'en') {
+      console.log("The updated langCode is:", langCode);
+    }
   }, [langCode]);
 
   return (
-    <div className={`relative flex flex-col min-h-screen pt-8`}>
+    <div className="relative flex flex-col min-h-screen">
       <div className="bg-transparent z-[100] absolute w-full h-[4rem]">
         <Header />
       </div>
 
-      {/* Google Translate Element */}
+      {/* Google Translate */}
       <div
         id="google_translate_element"
         style={{
@@ -53,29 +46,32 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
         }}
       ></div>
 
-      {/* Load Translate API */}
       <Script
         src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
         strategy="afterInteractive"
       />
 
-      {/* Init translate element with site base language = en */}
-      <Script id="google-translate-init" strategy="afterInteractive">
-        {`
-          function googleTranslateElementInit() {
-            new google.translate.TranslateElement(
-              {
-                pageLanguage: 'en',
-                autoDisplay: false
-              },
-              'google_translate_element'
-            );
-          }
-        `}
-      </Script>
+      {/* Inject langCode into the translate script after it's loaded */}
+      {langCode && (
+        <Script id="google-translate-init" strategy="afterInteractive">
+          {`
+            function googleTranslateElementInit() {
+              new google.translate.TranslateElement(
+                {
+                  pageLanguage: '${langCode}',
+                  autoDisplay: true,
+                },
+                'google_translate_element'
+              );
+            }
+          `}
+        </Script>
+      )}
 
       <main className="h-full">{children}</main>
-      <Footer />
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 };

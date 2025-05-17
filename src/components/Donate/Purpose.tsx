@@ -8,7 +8,7 @@ import { useRef } from "react";
 
 const Purpose = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true }); // animate only once
+  const isInView = useInView(ref, { once: false }); // animate only once
 
   const boxes = [
     {

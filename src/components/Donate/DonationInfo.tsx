@@ -10,21 +10,15 @@ import { useRef } from "react";
 
 const DonationInfo = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true }); // animate only once
+  const isInView = useInView(ref, { once: false }); // animate only once
 
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
+  const aboutRef = useRef(null);
+  const isAboutInView = useInView(aboutRef, { once: false }); // animate only once
 
-  const cardVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0 },
-  };
+  const statRef = useRef(null);
+  const isStatInView = useInView(statRef, { once: false }); // animate only once
+
+ 
 
   const boxes = [
     {
@@ -69,72 +63,73 @@ const DonationInfo = () => {
   return (
     <div className="min-h-[100svh] flex flex-col">
       {/* boxes */}
-      <motion.div
-        ref={ref}
-        variants={containerVariants}
-        initial="hidden"
-        animate={isInView ? "visible" : "hidden"}
-        className=" h-auto bg-[#F8F8F8] flex gap-2 flex-wrap justify-center"
-      >
-        {boxes.map((item, index) => (
-          <motion.div
-            variants={cardVariants}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            className=" flex"
-          >
-            <div
-              className=" p-10 text-center min-md:w-[384px] h-full "
-              key={index}
-            >
-              <p className=" text-[4rem] font-[inter-bold]  ">{item.title}</p>
-              <p className=" text-[#00000099]">{item.info}</p>
-            </div>
-            <div className=" h-[30%] my-auto flex w-[1px] bg-[#CFCFCF] max-sm:hidden"></div>
-          </motion.div>
-        ))}
+      <div className=" h-auto bg-[#F8F8F8] flex gap-2 flex-wrap justify-center">
         <motion.div
-          variants={cardVariants}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className=" p-10 text-left h-auto bg-[#040725] flex flex-col gap-4"
+          ref={statRef}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isStatInView ? { opacity: 1, y: 0 } : {}} // animate when in view
+          className="min-md:flex"
         >
-          <div className="w-[30%] h-[1px] bg-[#fff]"></div>
-          <p className=" text-[28px] font-[inter-bold] text-[#fff]  ">
-            Our Goal Is To Help The Needy.
-          </p>
-          <p className=" text-[#fff]">
-            Become a Partner <ArrowTopRight />
-          </p>
+          {boxes.map((item, index) => (
+            <div className=" flex">
+              <div
+                className=" p-10 text-center min-md:w-[384px] h-full "
+                key={index}
+              >
+                <p className=" text-[4rem] font-[inter-bold]  ">{item.title}</p>
+                <p className=" text-[#00000099]">{item.info}</p>
+              </div>
+              <div className=" h-[30%] my-auto flex w-[1px] bg-[#CFCFCF] max-sm:hidden"></div>
+            </div>
+          ))}
+          <motion.div
+            //  initial={{ opacity: 0, y: 50 }}
+            //  animate={isInView ? { opacity: 1, y: 0 } : {}} // animate when in view
+            className=" p-10 text-left h-auto bg-[#040725] flex flex-col gap-4"
+          >
+            <div className="w-[30%] h-[1px] bg-[#fff]"></div>
+            <p className=" text-[28px] font-[inter-bold] text-[#fff]  ">
+              Our Goal Is To Help The Needy.
+            </p>
+            <p className=" text-[#fff]">
+              Become a Partner <ArrowTopRight />
+            </p>
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
+
       {/* About us */}
       <div className=" min-md:p-6  h-auto flex gap-4 px-8 my-20 max-sm:flex-col">
         {/* Images div */}
         <motion.div
-          ref={ref}
+          // ref={ref}
           initial={{ opacity: 0, x: -50 }} // start 50px to the left
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className=" min-md:w-[50%] flex gap-4 flex-wrap justify-center"
+          className=" min-md:w-[50%] flex gap-4 flex-wrap justify-center h-auto"
         >
           {donateImages.map((image, index) => (
-            <div key={index} className=" h-60 w-60 ">
+            <div
+              key={index}
+              className=" h-90 w-100 rounded-md min-md:h-70 min-md:w-70 "
+            >
               <Image
                 src={image}
                 width={240}
                 height={150}
                 alt="image"
-                className="h-full w-full"
+                className="h-full w-full rounded-md"
               />
             </div>
           ))}
         </motion.div>
         {/* ABout us DIv */}
         <motion.div
-          ref={ref}
+          ref={aboutRef}
           initial={{ opacity: 0, x: 50 }} // start 50px to the left
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          animate={isAboutInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className=" min-md:w-[50%] flex flex-col gap-4"
+          className=" min-md:w-[50%] flex flex-col gap-4 h-auto"
         >
           <p className=" text-[#ff0000] text-[20px] min-md:text-[25px] font-[inter-bold] max-sm:text-center">
             About us

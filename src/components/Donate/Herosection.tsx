@@ -8,8 +8,9 @@ import { useRef } from "react";
 export default function HeroSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // animate only once
+  
   return (
-    <div className=" relative  w-full min-md:h-[90svh] h-auto bg-red-600">
+    <div className=" relative  w-full min-md:h-[90svh] h-auto">
       <Image
         src={donateBg} // Save your image in `public/images/hero-man.png`
         alt="Donation hero"
@@ -23,7 +24,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}} // animate when in view
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className=" min-md:mt-20"
+            className=" min-md:mt-20 max-sm:py-8"
           >
             <p className="text-sm text-[#94864E] font-semibold uppercase mb-2">
               Charitable deeds

@@ -6,7 +6,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 const Supper = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true }); // animate only once
+  const isInView = useInView(ref, { once: false }); // animate only once
   return (
     <motion.div
       ref={ref}

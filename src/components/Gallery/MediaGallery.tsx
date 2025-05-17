@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -11,7 +10,7 @@ const videoData = [
     id: 1,
     title: "Open Air Veranstaltung",
     url: "https://www.youtube.com/watch?v=your-video-id1",
-    thumbnail: "/thumbnails/gallery1.png"
+    thumbnail: "/thumbnails/gallery1.png",
   },
   {
     id: 2,
@@ -103,59 +102,72 @@ const MediaGallery = () => {
       </div>
 
       {tab === "videos" && (
-         <div className="flex flex-wrap gap-4">
-         {loading ? (
-           // 👇 Show skeleton while loading
-           Array.from({ length: 6 }).map((_, index) => (
-             <div
-               key={index}
-               className="w-[300px] h-[250px] bg-gray-200 animate-pulse rounded-md"
-             >
-               <div className="h-[200px] bg-gray-300 rounded-t-md" />
-               <div className="h-4 mt-2 mx-2 bg-gray-300 rounded" />
-             </div>
-           ))
-         ) : (
-           // 👇 Show videos when loaded
-           videos.map((video: YoutubeVideosResp) => (
-             <div key={video.id.videoId} className="w-[300px]">
-               <iframe
-                 width="300"
-                 height="200"
-                 src={`https://www.youtube.com/embed/${video.id.videoId}`}
-                 title={video.snippet.title}
-                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                 allowFullScreen
-                 className="rounded-t-md"
-               />
-               <p className="mt-2 text-sm font-medium">{video.snippet.title}</p>
-             </div>
-           ))
-         )}
-       </div>
-       )}
+        <div className="flex flex-wrap gap-4">
+          {loading
+            ? // 👇 Show skeleton while loading
+              Array.from({ length: 6 }).map((_, index) => (
+                <div
+                  key={index}
+                  className="w-[300px] h-[250px] bg-gray-200 animate-pulse rounded-md"
+                >
+                  <div className="h-[200px] bg-gray-300 rounded-t-md" />
+                  <div className="h-4 mt-2 mx-2 bg-gray-300 rounded" />
+                </div>
+              ))
+            : // 👇 Show videos when loaded
+              videos.length > 0 &&
+              videos.map((video: YoutubeVideosResp) => (
+                <div key={video.id.videoId} className=" max-sm:mx-auto ">
+                  <iframe
+                    width="400"
+                    height="225"
+                    src={`https://www.youtube.com/embed/${video.id.videoId}`}
+                    title={video.snippet.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="rounded-md"
+                  />
+                  <p className="mt-2 text-sm font-medium">
+                    {video.snippet.title}
+                  </p>
+                </div>
+              ))}
+              {videos.length > 0 && (
+                <a
+                href="https://www.youtube.com/@mowdministries.e.vgospelofsalv"
+                target="_blank"
+                className="w-full flex justify-center"
+              >
+                <button className=" text-[#fff]  mx-auto px-6 py-3 text-[12px] red-button rounded-md bg-[#ff0000] cursor-pointer min-md:text-lg font-[inter-bold] ">
+                  See more
+                </button>
+              </a>
+              )}
+        </div>
+      )}
 
       {tab === "photos" && (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {videoData.map((video) => (
             <div key={video.id} className="relative group">
-                <Image
-                  src={video.thumbnail}
-                  alt={video.title}
-                  width={400}
-                  height={225}
-                  className="rounded-lg object-cover w-full"
-                />
-                {/* <div className="absolute inset-0 bg-transparent bg-opacity-50 flex items-end justify-start  transition pb-6 ">
+              <Image
+                src={video.thumbnail}
+                alt={video.title}
+                width={400}
+                height={225}
+                className="rounded-lg object-cover w-full"
+              />
+              {/* <div className="absolute inset-0 bg-transparent bg-opacity-50 flex items-end justify-start  transition pb-6 ">
                 <span className=" bg-[#0000008f] w-auto flex items-center gap-2 px-2 rounded-bl-md py-2"> <p className="font-[inter-bold] text-[12px] md:text-[15px]">Watch on Youtube</p> <FaYoutube size={40} color="red" className="" /></span>
                 </div> */}
-              
+
               {/* <p className="mt-2 text-sm text-center">{video.title}</p> */}
             </div>
           ))}
-        </div>      )}
+        </div>
+      )}
     </div>
   );
-}
+};
 
-export default MediaGallery
+export default MediaGallery;

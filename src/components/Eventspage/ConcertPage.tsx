@@ -8,7 +8,7 @@ import { useInView, motion } from "framer-motion";
 
 const ConcertPage = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true }); // animate only once
+  const isInView = useInView(ref, { once: false }); // animate only once
 
   return (
     <div className="min-h-screen relative flex items-center justify-center bg-cover bg-center min-md:p-6">

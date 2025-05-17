@@ -88,7 +88,7 @@ const activities = {
 const CharityActivities = () => {
   const [activeYear, setActiveYear] = useState<keyof typeof activities>("2022");
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true }); // animate only once
+  const isInView = useInView(ref, { once: false }); // animate only once
   return (
     <section className="py-16 px-6 md:px-20">
       <h2 className="text-3xl md:text-4xl font-[inter-bold] text-center mb-8">
@@ -96,12 +96,12 @@ const CharityActivities = () => {
       </h2>
 
       {/* Year Tabs */}
-      <div className="flex justify-center gap-8 mb-12 cursor-ponter text-lg font-semibold">
+      <div className="flex justify-center  gap-8 mb-12 cursor-ponter text-lg font-semibold">
         {(["2022", "2023", "2024"] as const).map((year) => (
           <button
             key={year}
             onClick={() => setActiveYear(year)}
-            className={`pb-2 border-b-4 transition  ${
+            className={`pb-2 border-b-4 cursor-pointer   transition  ${
               activeYear === year
                 ? "border-red-600 text-black"
                 : "border-transparent text-gray-500 hover:text-black"
@@ -113,7 +113,7 @@ const CharityActivities = () => {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {activities[activeYear].length > 0 ? (
           activities[activeYear].map((img, idx) => (
             <motion.div

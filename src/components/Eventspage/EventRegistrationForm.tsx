@@ -2,13 +2,23 @@
 
 import { useForm } from "@formspree/react";
 import { Loader } from "lucide-react";
+import { useInView, motion } from "framer-motion";
+import { useRef } from "react";
 
 const EventRegistrationForm = () => {
- 
   const [state, handleSubmit] = useForm("xzzrznga");
+   const ref = useRef(null);
+    const isInView = useInView(ref, { once: false }); // animate only once
+  
 
   return (
-    <div className="max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-lg w-full">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, x: -50 }} // start 50px to the left
+      animate={isInView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-lg w-full"
+    >
       <h2 className="text-lg font-[inter-bold] mb-4 text-center">
         Please register for the upcoming event
       </h2>
@@ -44,7 +54,9 @@ const EventRegistrationForm = () => {
             />
           </div>
           <div>
-            <label htmlFor="zip" className="block text-sm font-medium">Zip:</label>
+            <label htmlFor="zip" className="block text-sm font-medium">
+              Zip:
+            </label>
             <input
               name="zip"
               type="text"
@@ -100,7 +112,11 @@ const EventRegistrationForm = () => {
           <button
             disabled={state.submitting}
             type="submit"
-            style={{ display: "flex" , justifyContent: "center", alignItems: "center"}}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
             className="bg-[#040725] black-button text-white px-6 py-2 rounded-md w-full md:w-auto font-[inter-bold]"
           >
             {state.submitting ? <Loader /> : "Submit"}
@@ -116,7 +132,7 @@ const EventRegistrationForm = () => {
           </p>
         )}
       </form>
-    </div>
+    </motion.div>
   );
 };
 

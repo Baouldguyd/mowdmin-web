@@ -10,76 +10,56 @@ import { useRef } from "react";
 
 const Register = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true }); // animate only once
-
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, x: -50 },
-    visible: { opacity: 1, x: 0 },
-  };
+  const isInView = useInView(ref, { once: false }); // animate only once
 
   return (
     <div className=" pt-12 bg-[#F8F8F8] md:min-h-screen h-auto grid grid-rows-[1fr_1fr] ">
       {/* Register Container */}
       <div className=" mx-6 mb-4 flex gap-2 flex-col md:flex-row  mt-4">
         {/* Form */}
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, x: -50 }} // start 50px to the left
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className=" rounded-md h-full bg-[#fff] md:w-[60%] flex items-center"
-        >
+        <div className=" rounded-md h-full bg-[#fff] md:w-[60%] flex items-center">
           <EventRegistrationForm />
-        </motion.div>
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, x: 50 }} // start 50px to the left
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="  flex items-center md:w-[40%] rounded-md h-[37rem] bg-red-400"
-        >
-          <div className=" relative w-full h-[37rem]">
-            <Image
-              src={crowd}
-              alt=""
-              className="absolute h-full w-full rounded-md  "
-            />
-            <div className=" relative h-full flex flex-col gap-4 bg-[#00000071] rounded-md p-4 ">
-              <p className=" text-[4rem]  text-[#fff] font-[kalam-bold] w-[10rem] m-auto  ">
-                New here?
-              </p>
-              <p className=" text-center text-[#fff] w-[80%] mx-auto my-8">
-                Please scroll down the page or click the button below to visit
-                our YouTube page to catch the plethora of past events.
-              </p>
-              <a
-                href="https://www.youtube.com/@mowdministries.e.vgospelofsalv"
-                target="_blank"
-                className="w-full flex justify-center"
-              >
-                <button className=" text-[#fff]  mx-auto px-6 py-3 text-[12px] red-button rounded-md bg-[#ff0000] cursor-pointer min-md:text-lg font-[inter-bold] ">
-                  Encore
-                </button>
-              </a>
+        </div>
+        <div className="  flex items-center md:w-[40%] rounded-md h-[37rem] ">
+          <motion.div
+            ref={ref}
+            initial={{ opacity: 0, x: 50 }} // start 50px to the left
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <div className=" relative w-full h-[37rem]">
+              <Image
+                src={crowd}
+                alt=""
+                className="absolute h-full w-full rounded-md  "
+              />
+              <div className=" relative h-full flex flex-col gap-4 bg-[#00000071] rounded-md p-4 ">
+                <p className=" text-[4rem]  text-[#fff] font-[kalam-bold] w-[10rem] m-auto  ">
+                  New here?
+                </p>
+                <p className=" text-center text-[#fff] w-[80%] mx-auto my-8">
+                  Please scroll down the page or click the button below to visit
+                  our YouTube page to catch the plethora of past events.
+                </p>
+                <a
+                  href="https://www.youtube.com/@mowdministries.e.vgospelofsalv"
+                  target="_blank"
+                  className="w-full flex justify-center"
+                >
+                  <button className=" text-[#fff]  mx-auto px-6 py-3 text-[12px] red-button rounded-md bg-[#ff0000] cursor-pointer min-md:text-lg font-[inter-bold] ">
+                    Encore
+                  </button>
+                </a>
+              </div>
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
       {/* Card Container */}
       <div className="  h-auto mt-8  ">
         <div className="max-w-4xl mx-auto p-6 flex flex-col md:grid md:grid-cols-2 gap-6 ">
           {/* First Card */}
           <motion.div
-            ref={ref}
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}} // animate when in view
             transition={{ duration: 0.8, ease: "easeOut" }}
