@@ -3,7 +3,7 @@ import {useRef} from "react";
 import background from "@/assets/Images/subscribeImgnew.jpg";
 import Image from "next/image";
 import { useForm } from "@formspree/react";
-import { Loader } from "lucide-react";
+import "@/components/Loader/loader.css"; // Import your loader CSS here
 import { motion, useInView } from "framer-motion";
 
 
@@ -38,7 +38,7 @@ const NewsLetter = () => {
                 type="submit"
                 className=" bg-[#040725] text-[#fff] absolute right-5 py-4 px-6 top-1 text-[15px] rounded-md font-[inter-bold] cursor-pointer "
               >
-                {state.submitting ? <Loader /> : "Subscribe"}
+                {state.submitting ? <div className="loader"></div> : "Subscribe"}
               </button>
             </div>
           </form>

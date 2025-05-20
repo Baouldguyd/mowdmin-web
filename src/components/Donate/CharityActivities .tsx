@@ -113,17 +113,16 @@ const CharityActivities = () => {
       </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 50 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}} // animate when in view
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
         {activities[activeYear].length > 0 ? (
           activities[activeYear].map((img, idx) => (
-            <motion.div
-              ref={ref}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}} // animate when in view
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              key={idx}
-              className="text-center"
-            >
+            <div key={idx} className="text-center">
               <div className="rounded-lg overflow-hidden mb-4 ">
                 <Image
                   src={img.src}
@@ -135,14 +134,14 @@ const CharityActivities = () => {
               </div>
               <h3 className="font-semibold text-lg">Donation {activeYear}</h3>
               <p className="text-gray-600 text-sm w-[70%] mx-auto">{img.alt}</p>
-            </motion.div>
+            </div>
           ))
         ) : (
           <p className="col-span-full text-center text-gray-500">
             No charity activities recorded for {activeYear}.
           </p>
         )}
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -1,6 +1,6 @@
 "use client";
 import { useForm } from "@formspree/react";
-import { Loader } from "lucide-react";
+import "@/components/Loader/loader.css"; // Import your loader CSS here
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
@@ -130,7 +130,7 @@ const PartnersForm = () => {
                   type="submit"
                   className="w-full bg-[#040725] text-white cursor-pointer font-[inter-bold] py-4 rounded hover:bg-gray-800 transition"
                 >
-                  {state.submitting ? <Loader /> : "Submit"}
+                  {state.submitting ? <div className="loader"></div> : "Submit"}
                 </button>
               </form>
             </motion.div>

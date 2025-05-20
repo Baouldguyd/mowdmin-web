@@ -1,7 +1,7 @@
 "use client";
 
 import { useForm } from "@formspree/react";
-import { Loader } from "lucide-react";
+import "@/components/Loader/loader.css"; // Import your loader CSS here
 import { useInView, motion } from "framer-motion";
 import { useRef } from "react";
 
@@ -119,7 +119,7 @@ const EventRegistrationForm = () => {
             }}
             className="bg-[#040725] black-button text-white px-6 py-2 rounded-md w-full md:w-auto font-[inter-bold]"
           >
-            {state.submitting ? <Loader /> : "Submit"}
+            {state.submitting ? <div className="loader"></div> : "Submit"}
           </button>
         </div>
 

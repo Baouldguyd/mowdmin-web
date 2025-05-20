@@ -5,10 +5,17 @@ import ArrowTopRight from "@/assets/Icons/Arrow/ArrowTopRight";
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useRouter } from "next/navigation";
+
 export default function HeroSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // animate only once
-  
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/partnership");
+  };
+
   return (
     <div className=" relative  w-full min-md:h-[90svh] h-auto">
       <Image
@@ -48,7 +55,7 @@ export default function HeroSection() {
                 </button>
               </a>
 
-              <button className="bg-white text-black px-6 py-3 rounded-md font-[inter-bold] flex items-center gap-2 hover:bg-gray-200 transition">
+              <button onClick={handleClick} className="bg-white text-black cursor-pointer hover:bg-gray-700 px-6 py-3 rounded-md font-[inter-bold] flex items-center gap-2 hover:text-white transition">
                 Become a Partner
                 <ArrowTopRight />
                 {/* <ArrowRight className="w-4 h-4" /> */}

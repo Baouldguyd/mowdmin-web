@@ -1,5 +1,4 @@
 "use client";
-import { Divide } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import { useInView, motion } from "framer-motion";
@@ -66,8 +65,8 @@ const Purpose = () => {
               </p>
               {item.info && <p className=" ">{item.info}</p>}
               {item.purpose &&
-                item.purpose.map((purpose) => (
-                  <p className="text-left">{purpose}</p>
+                item.purpose.map((purpose, index) => (
+                  <p key={index} className="text-left">{purpose}</p>
                 ))}
             </div>
             <div className=" h-[30%] my-auto flex w-[1px] bg-[#CFCFCF]"></div>

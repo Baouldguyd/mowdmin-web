@@ -12,6 +12,10 @@ const Register = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false }); // animate only once
 
+  const encoreRef = useRef(null);
+  const isEncoreInView = useInView(encoreRef, { once: false }); // animate only once
+ 
+ 
   return (
     <div className=" pt-12 bg-[#F8F8F8] md:min-h-screen h-auto grid grid-rows-[1fr_1fr] ">
       {/* Register Container */}
@@ -22,9 +26,9 @@ const Register = () => {
         </div>
         <div className="  flex items-center md:w-[40%] rounded-md h-[37rem] ">
           <motion.div
-            ref={ref}
+            ref={encoreRef}
             initial={{ opacity: 0, x: 50 }} // start 50px to the left
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            animate={isEncoreInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className=" relative w-full h-[37rem]">

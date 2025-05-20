@@ -18,7 +18,8 @@ const DonationInfo = () => {
   const statRef = useRef(null);
   const isStatInView = useInView(statRef, { once: false }); // animate only once
 
- 
+  const donateRef = useRef(null);
+  const isDonateInView = useInView(donateRef, { once: false }); // animate only once
 
   const boxes = [
     {
@@ -64,12 +65,7 @@ const DonationInfo = () => {
     <div className="min-h-[100svh] flex flex-col">
       {/* boxes */}
       <div className=" h-auto bg-[#F8F8F8] flex gap-2 flex-wrap justify-center">
-        <motion.div
-          ref={statRef}
-          initial={{ opacity: 0, y: 50 }}
-          animate={isStatInView ? { opacity: 1, y: 0 } : {}} // animate when in view
-          className="min-md:flex"
-        >
+        <div className="min-md:flex">
           {boxes.map((item, index) => (
             <div className=" flex">
               <div
@@ -83,8 +79,8 @@ const DonationInfo = () => {
             </div>
           ))}
           <motion.div
-            //  initial={{ opacity: 0, y: 50 }}
-            //  animate={isInView ? { opacity: 1, y: 0 } : {}} // animate when in view
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}} // animate when in view
             className=" p-10 text-left h-auto bg-[#040725] flex flex-col gap-4"
           >
             <div className="w-[30%] h-[1px] bg-[#fff]"></div>
@@ -95,7 +91,7 @@ const DonationInfo = () => {
               Become a Partner <ArrowTopRight />
             </p>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
 
       {/* About us */}
@@ -103,8 +99,9 @@ const DonationInfo = () => {
         {/* Images div */}
         <motion.div
           // ref={ref}
+          ref={donateRef}
           initial={{ opacity: 0, x: -50 }} // start 50px to the left
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          animate={isDonateInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className=" min-md:w-[50%] flex gap-4 flex-wrap justify-center h-auto"
         >

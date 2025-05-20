@@ -1,7 +1,7 @@
 "use client";
 import { useForm } from "@formspree/react";
-import { Loader } from "lucide-react";
 import React, { useState } from "react";
+import "@/components/Loader/loader.css"; // Import your loader CSS here
 
 const Contactform = () => {
   const [state, handleSubmit] = useForm("manonrje");
@@ -103,9 +103,9 @@ const Contactform = () => {
                 }}
                 disabled={state.submitting}
                 type="submit"
-                className="w-full bg-[#040725] text-white cursor-pointer font-[inter-bold] py-4 rounded hover:bg-gray-800 transition"
+                className="w-full bg-[#040725] flex justify-center items-center text-white cursor-pointer font-[inter-bold] py-4 rounded hover:bg-gray-800 transition"
               >
-                {state.submitting ? <Loader /> : "Submit"}
+                {state.submitting ? <div className="loader"></div> : "Submit"}
               </button>
             </form>
             {state.succeeded && (
