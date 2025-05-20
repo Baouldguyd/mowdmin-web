@@ -5,11 +5,19 @@ import ArrowTopRight from "@/assets/Icons/Arrow/ArrowTopRight";
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useRouter } from "next/navigation";
+
 export default function HeroSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // animate only once
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push("/partnership");
+  };
+
   return (
-    <div className=" relative  w-full min-md:h-[90svh] h-auto bg-red-600">
+    <div className=" relative  w-full min-md:h-[90svh] h-auto">
       <Image
         src={donateBg} // Save your image in `public/images/hero-man.png`
         alt="Donation hero"
@@ -23,7 +31,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}} // animate when in view
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className=" min-md:mt-20"
+            className=" min-md:mt-20 max-sm:py-8"
           >
             <p className="text-sm text-[#94864E] font-semibold uppercase mb-2">
               Charitable deeds
@@ -47,7 +55,7 @@ export default function HeroSection() {
                 </button>
               </a>
 
-              <button className="bg-white text-black px-6 py-3 rounded-md font-[inter-bold] flex items-center gap-2 hover:bg-gray-200 transition">
+              <button onClick={handleClick} className="bg-white text-black cursor-pointer hover:bg-gray-700 px-6 py-3 rounded-md font-[inter-bold] flex items-center gap-2 hover:text-white transition">
                 Become a Partner
                 <ArrowTopRight />
                 {/* <ArrowRight className="w-4 h-4" /> */}

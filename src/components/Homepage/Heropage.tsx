@@ -12,7 +12,7 @@ const Heropage = () => {
   const [isMuted, setIsMuted] = useState<boolean>(true);
   return (
     <div className="min-h-md:min-h-[90svh] min-h-[65svh]  bg-[#000] relative">
-      <div className=" min-md:h-[72%] md:px-20 min-md:mt-[-80]">
+      <div className=" min-md:h-[72%] md:px-20 min-md:p-10 min-md:mt-[-80]">
         <BackgroundVideo
           isMuted={isMuted}
           setIsMuted={setIsMuted}

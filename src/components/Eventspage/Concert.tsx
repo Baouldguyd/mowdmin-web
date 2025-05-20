@@ -1,7 +1,7 @@
 "use client";
 
 import { useForm } from "@formspree/react";
-import { Loader } from "lucide-react";
+import "@/components/Loader/loader.css"; // Import your loader CSS here
 
 const Concert: React.FC = () => {
   
@@ -46,11 +46,12 @@ const Concert: React.FC = () => {
       style={{
         display: "flex",
         justifyContent: "center",
+        alignItems: "center",
       }}
         type="submit"
-        className="w-full bg-[#040725] black-button text-white py-2 rounded font-[inter-bold]"
+        className="w-full bg-[#040725] flex items-center justify-center black-button text-white py-2 rounded font-[inter-bold]"
       >
-        {state.submitting ? <Loader /> : "Submit"}
+        {state.submitting ? <div className="loader"></div> : "Submit"}
       </button>
     </form>
       {state.succeeded && (

@@ -10,7 +10,7 @@ import { useRef } from "react";
 
 const Support = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true }); // animate only once
+  const isInView = useInView(ref, { once: false }); // animate only once
 
   return (
     <div className=" min-h-[100svh] relative">

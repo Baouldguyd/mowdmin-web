@@ -1,6 +1,6 @@
 "use client";
 import { useForm } from "@formspree/react";
-import { Loader } from "lucide-react";
+import "@/components/Loader/loader.css"; // Import your loader CSS here
 import { useInView, motion } from "framer-motion";
 import { useRef } from "react";
 
@@ -153,9 +153,9 @@ const Baptism = () => {
                 justifyContent: "center",
               }}
               type="submit"
-              className="w-full sm:w-auto mx-auto bg-[#FF0000] hover:bg-red-700 text-white py-2 px-8 rounded text-sm sm:text-base red-button font-[inter-bold]"
+              className="w-full sm:w-auto mx-auto bg-[#FF0000] hover:bg-red-700 text-white py-2 px-8 rounded flex justify-center items-center text-sm sm:text-base red-button font-[inter-bold]"
             >
-              {state.submitting ? <Loader /> : "Submit"}
+              {state.submitting ? <div className="loader"></div> : "Submit"}
             </button>
           </div>
         </form>

@@ -1,11 +1,11 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-import ClientWrapper from "@/components/ClientWrapper";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Mowd Ministries",
-  icons:{
+  icons: {
     icon: "/favicon.png",
   },
   description: "Get Connected to Jesus",
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-[inter-regular]" att-vdb-init="true">
-        {/* <ClientWrapper /> */}
+        
         <main>{children}</main>
       </body>
     </html>

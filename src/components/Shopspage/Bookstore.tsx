@@ -37,7 +37,7 @@ const BookStore = () => {
       </h2>
 
       {/* Carousel Section */}
-      <div className="flex space-x-4 overflow-x-auto pb-4 w-[80vw] mx-auto">
+      <div className="flex space-x-4 overflow-x-auto  pb-4 w-[80vw] mx-auto">
         {books.map((book, index) => {
           return book.bookInfo.map((book) => (
             <div
@@ -63,7 +63,12 @@ const BookStore = () => {
 
       {/* Selected Book Info */}
       {selectedBook && (
-        <div className="mt-10 border-t pt-6 flex flex-col md:flex-row gap-6">
+        <div
+          key={selectedBook.id}
+          className="mt-10 border-t pt-6 flex flex-col md:flex-row gap-6
+               transition-all duration-100 ease-in-out
+                translate-y-4 animate-fadeInSlideUp"
+        >
           <div className="w-full md:w-1/3">
             <Image
               src={selectedBook.image}
