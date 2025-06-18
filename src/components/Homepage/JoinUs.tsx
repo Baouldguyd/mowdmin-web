@@ -16,11 +16,11 @@ const JoinUs = () => {
         JOIN US FOR SERVICE
       </p>
       <p className=" text-center text-[#000] text-lg">
-        EVERY SUNDAY 8:30 AM - 02:00 PM
+        EVERY SUNDAY 1:30 PM - 3:00 PM
       </p>
       <p className=" text-center w-[80%] mx-auto text-[#B3B3B3] mt-4">
-        Join us for a uplifting and inspiring service every Sunday from 8:30 AM
-        to 2:00 PM, where we come together in worship, prayer, and fellowship. A
+        Join us for a uplifting and inspiring service every Sunday from 1:30 PM
+        to 3:00 PM, where we come together in worship, prayer, and fellowship. A
         detailed map is provided below to help you find your way easily.
       </p>
       {/* Map */}

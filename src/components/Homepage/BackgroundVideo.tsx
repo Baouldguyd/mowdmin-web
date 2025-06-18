@@ -36,7 +36,7 @@ const BackgroundVideo: React.FC<Player> = ({
     <div className="relative w-full min-md:min-h-screen h-[50svh]">
       <ReactPlayer
         ref={playerRef}
-        url="https://vid-cdn.website-editor.net/s/ec397ec3dcdd429fb15a940d37d92e42/videos/t9JcnH9iR9mNb6HHNW0A_Gebet+f%C3%BCr+Deutschland.p-v.mp4?Expires=1748668581&Signature=Sd6lMoR4JGU8HgZzmsDJjxC4~1Gn0s5uacAVQJitBk3zUohHgSCKKAWpcfooz4TYKCH6iz2-zJoDJmv~lB1B3ac1By9YPi22dsmZkQgp-itrwOy1hpz-mvo1WoKffo7Jy-ljDCj9Wie-FG0wGX6lUW798UmxRCsEwFkA46I1-hx~7QEM5d97w2iGezAbFYoEetAiWKsr3fjMIv3qEgC8soYTqBcmq3qiJnaXQZJBGTCcRhwzvcBB0kuGu-s-gH6Fhz~6bKyWqX-OOV6uRZSvAIJjLyEFYyB6Mv7aL~yI3RWateTF9nrCF30mCXSAt-xkGMDiU1TTu934-XuAQy0HeA__&Key-Pair-Id=K2NXBXLF010TJW" // Replace with your video URL
+        url="/video/heroVideo.mp4" 
         playing={isPlaying}
         loop
         muted={isMuted}

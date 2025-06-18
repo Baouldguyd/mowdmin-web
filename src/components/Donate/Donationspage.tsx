@@ -9,7 +9,7 @@ const Donationspage = () => {
   return (
     <div>
       <HeroSection />
-      <DonationInfo />
+      {/* <DonationInfo /> */}
       <CharityActivities />
       <Support />
       <Purpose/>

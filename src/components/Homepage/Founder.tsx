@@ -60,15 +60,15 @@ const Founder = () => {
         />
         <div className=" min-md:w-[50%] my-auto ">
           <p className=" text-[12px] md:text-[15px] leading-7 md:leading-10 mb-6">
-            Born in Cotonou, Benin Republic, Rev. MAURILLE BAMIGBOLA OSSE is the
-            President and Founder of Mowdministries {"("}Maurille Osse Worldwide
-            Deliverance Ministries{")"} and the Supervisor of the Gospel of
-            Salvation. Former student of the SMB, now the Bible Institute of
-            Benin {"(IBB)"}, he has been active in evangelization for more than
-            two decades. God gave him clear and prophetic news that he was
-            bringing salvation and hope to his people. Remarkable signs, wonders
-            and wonders of God testify about his teaching. He is happily married
-            to Ruth and they received three blessed children from God.
+            Born in Cotonou, Benin, Apostle Maurille Bamigbola Ossé is the
+            president and founder of Mowdministries (Maurille Osse Worldwide
+            Deliverance Ministries) and the Church of the Gospel of Salvation. A
+            former student of SMB, now the Institut Biblique du Bénin (IBB). He
+            hold AIM Qualification in Exegical Theology. He has been active in
+            evangelism for over two decades. God has given him clear and
+            prophetic messages that bring salvation and hope to God's people.
+            Remarkable signs, wonders, and miracles testify to his teaching. He
+            is happily married to Ruth, and they have children blessed by God.
           </p>
           {/* <button className=" black-button cursor-pointer text-[#fff] bg-[#040725]  rounded-md py-3 px-4 min-md:px-7 min-md:py-2 text-[12px] max-sm:mx-auto max-sm:flex min-md:text-[14.5px] ">
             Further
