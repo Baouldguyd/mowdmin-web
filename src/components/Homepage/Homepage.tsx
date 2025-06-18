@@ -6,17 +6,13 @@ import ChurchMinistries from './ChurchMinistries'
 import Founder from './Founder'
 import JoinUs from './JoinUs'
 import NewsLetter from './NewsLetter'
-// motion
-
-import { motion } from 'framer-motion'
-// variants
-import { fadeIn } from '@/variants'
-import FadeInOnScroll from './FadeInOnScroll';
+import AboutUs from './AboutUs';
 
 const Homepage = () => {
   return (
     <div className='h-auto flex flex-col gap-6'>
         <Heropage/>
+        <AboutUs/>
         <ValuesPage/>
         <ChurchMinistries/>
         <Founder/>

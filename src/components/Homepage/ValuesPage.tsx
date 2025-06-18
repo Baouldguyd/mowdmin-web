@@ -8,7 +8,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 // variants
 import { fadeIn } from "@/variants";
-import { motion, useInView } from "framer-motion";
+import { hover, motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const ValuesPage = () => {
@@ -16,22 +16,22 @@ const ValuesPage = () => {
     {
       name: "Events & Concerts",
       icon: <Events />,
-      link: "",
+      link: "/events",
     },
     {
-      name: "Worship Shop",
+      name: "Worship",
       icon: <Worship />,
-      link: "",
+      link: "/",
     },
     {
       name: "Baptism",
       icon: <Baptism />,
-      link: "",
+      link: "/events",
     },
     {
       name: "Charitable Acts",
       icon: <Charitable />,
-      link: "",
+      link: "/donate",
     },
   ];
 
@@ -63,9 +63,11 @@ const ValuesPage = () => {
         <div className=" flex md:gap-8 gap-4 mx-auto flex-wrap justify-center">
           {values.map((value, index) => (
             <div key={index} className="">
-              <div className=" border border-[#B3B3B3] rounded-full min-md:w-50 min-md:h-50 w-20 h-20 flex justify-center items-center">
+                <div
+                className={`border border-[#B3B3B3] rounded-full min-md:w-50 min-md:h-50 w-20 h-20 flex justify-center items-center transition-colors duration-300 hover:bg-[#f3f3f3] hover:border-[#040725] hover:cursor-pointer`}
+                >
                 {value.icon}
-              </div>
+                </div>
               <p className=" text-center md:text-[15px] text-[12px]">
                 {value.name}
               </p>
@@ -104,7 +106,7 @@ const ValuesPage = () => {
               </p>
               <button
                 onClick={handleDiscoverMore}
-                className="  py-3 px-4 w-30 md:mt-4 bg-[#FF0000] text-[#fff] text-[13px] rounded-md cursor-pointer"
+                className="  py-3 px-4 w-30 md:mt-4 bg-[#FF0000] text-[#fff] text-[13px] rounded-md cursor-pointer "
               >
                 Discover More
               </button>

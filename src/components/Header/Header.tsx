@@ -48,7 +48,7 @@ const Header = () => {
     <div className=" h-10 flex my-6  justify-between px-6 font-[inter-bold]   ">
       {/* Logo */}
       <div className="h-full">
-        <Image src={Logo} alt="Logo" className="h-full w-10" />
+        <Image src={Logo} alt="Logo" className="h-full w-10 min-md:w-20 min-md:h-20 rotate-clockwise" />
       </div>
 
       <div className="flex gap-4 items-center ">

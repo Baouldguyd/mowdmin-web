@@ -82,9 +82,9 @@ const ChurchMinistries = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className=" "
         >
-          <p className=" text-[#FF0000] max-sm:text-[12px] text-[20px] font-[inter-extrabold] w-full">
+          {/* <p className=" text-[#FF0000] max-sm:text-[12px] text-[20px] font-[inter-extrabold] w-full">
             Knowledge and expertise
-          </p>
+          </p> */}
           <p className=" font-bold text-[2.5rem] text-[#000] font-[inter-extrabold]">
             Explore our church ministries
           </p>
