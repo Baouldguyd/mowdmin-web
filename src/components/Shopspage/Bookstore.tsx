@@ -31,7 +31,7 @@ const BookStore = () => {
 
   return (
     <div className="p-6">
-      <h2 className="text-xl font-semibold mb-4">
+      <h2 className="text-xl font-semibold my-8 min-md:text-2xl text-center">
         Explore our store and find your favorite books and CD albums available
         in three languages — <em>English, German, and French.</em>
       </h2>
@@ -65,7 +65,7 @@ const BookStore = () => {
       {selectedBook && (
         <div
           key={selectedBook.id}
-          className="mt-10 border-t pt-6 flex flex-col md:flex-row gap-6
+          className="my-10 border-t pt-6 flex flex-col md:flex-row gap-6
                transition-all duration-100 ease-in-out
                 translate-y-4 animate-fadeInSlideUp"
         >

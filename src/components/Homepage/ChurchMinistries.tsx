@@ -6,7 +6,6 @@ import christians from "@/assets/Images/christians.png";
 import Image from "next/image";
 import ArrowTopRight from "@/assets/Icons/Arrow/ArrowTopRight";
 import { useRouter } from "next/navigation";
-import { fadeIn } from "@/variants";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 const ChurchMinistries = () => {
