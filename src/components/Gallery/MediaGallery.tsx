@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { FaYoutube } from "react-icons/fa";
 import { YoutubeVideosResp } from "@/types/YoutubeResp";
+import { donateImages } from "@/data/constant";
+import { FaCamera } from "react-icons/fa6";
 
 const videoData = [
   {
@@ -48,7 +50,12 @@ const videoData = [
     url: "https://www.youtube.com/watch?v=your-video-id2",
     thumbnail: "/thumbnails/gallery7.png",
   },
-  // Add more video objects
+  ...donateImages.map((image, index) => ({
+    id: index + 8, 
+    title: `Donation Image ${index + 1}`,
+    url: "https://www.youtube.com/watch?v=your-video-id2", 
+    thumbnail: image,
+  })),
 ];
 
 const MediaGallery = () => {
@@ -65,7 +72,7 @@ const MediaGallery = () => {
       } catch (error) {
         console.error("Error fetching videos", error);
       } finally {
-        setLoading(false); // Done loading
+        setLoading(false);
       }
     }
     getVideos();
@@ -73,15 +80,27 @@ const MediaGallery = () => {
 
   return (
     <div className="p-6 bg-gray-900 text-white min-h-screen flex flex-col gap-4">
-      <div className="flex items-center gap-3 mb-6 mt-14">
-        <FaYoutube size={28} color="red" />
-        <h2 className="text-2xl font-[inter-bold]">YouTube</h2>
+      <div className="flex items-center gap-3 mb-6 mt-24">
+        
+        {tab === "videos" ? (
+          <>
+          <FaYoutube size={28} color="red" />
+          <h2 className="text-2xl font-[inter-bold] ">
+            YouTube
+          </h2>
+          </>
+        ) : (
+          <>
+          <FaCamera size={28} color="red" />
+          <h2 className="text-2xl font-[inter-bold] ">Photos</h2>
+          </>
+        )}
       </div>
 
       <div className="flex gap-6 mb-4 border-b border-gray-700 pb-2">
         <button
           onClick={() => setTab("videos")}
-          className={`text-sm uppercase ${
+          className={`text-sm uppercase cursor-pointer hover:text-amber-400 ${
             tab === "videos"
               ? "border-b-2 border-blue-500 text-blue-400"
               : "text-gray-400"
@@ -91,7 +110,7 @@ const MediaGallery = () => {
         </button>
         <button
           onClick={() => setTab("photos")}
-          className={`text-sm uppercase ${
+          className={`text-sm uppercase cursor-pointer hover:text-amber-400 ${
             tab === "photos"
               ? "border-b-2 border-blue-500 text-blue-400"
               : "text-gray-400"
@@ -125,7 +144,7 @@ const MediaGallery = () => {
                     title={video.snippet.title}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
-                    className="rounded-md"
+                className="rounded-lg object-cover w-full h-[250px] transition-transform duration-300 ease-in-out group-hover:scale-105"
                   />
                   <p className="mt-2 text-sm font-medium">
                     {video.snippet.title}
@@ -155,7 +174,7 @@ const MediaGallery = () => {
                 alt={video.title}
                 width={400}
                 height={225}
-                className="rounded-lg object-cover w-full"
+                className="rounded-lg object-cover w-full h-[250px] transition-transform duration-300 ease-in-out group-hover:scale-105"
               />
               {/* <div className="absolute inset-0 bg-transparent bg-opacity-50 flex items-end justify-start  transition pb-6 ">
                 <span className=" bg-[#0000008f] w-auto flex items-center gap-2 px-2 rounded-bl-md py-2"> <p className="font-[inter-bold] text-[12px] md:text-[15px]">Watch on Youtube</p> <FaYoutube size={40} color="red" className="" /></span>

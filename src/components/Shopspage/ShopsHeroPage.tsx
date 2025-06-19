@@ -4,9 +4,20 @@ import React from "react";
 import shopsBg from "@/assets/Images/shopsBg.png";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { useRouter } from "next/navigation";
+import ebendbildes from "@/assets/Images/ebenbildes.png";
+
+
 const ShopsHeroPage = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true }); // animate only once
+
+  const router = useRouter();
+
+  const handleBuyNow = () => {
+    router.push(`/shops?bookid=10`);
+  };
+ 
   return (
     <div className=" bg-[#040725E5] relative max-sm:min-h-[50svh] flex min-h-[70svh]  ">
       <div className="bg-[#040725E5] h-full w-full z-[10] absolute"> </div>
@@ -25,15 +36,19 @@ const ShopsHeroPage = () => {
             Spirit can meet all types of needs.
           </p>
           <div className="">
-            <button className=" red-button mt-6 font-[inter-bold] ">
+            <button
+            onClick={handleBuyNow}
+              type="button"
+            className=" red-button mt-6 font-[inter-bold] ">
               Buy Now
             </button>
           </div>
         </motion.div>
+        {/* <div className=""></div> */}
         <Image
-          src={shopsBg}
+          src={ebendbildes}
           alt=""
-          className=" w-[40%] my-auto  mr-6 h-fit max-sm:hidden "
+          className=" w-[40%] my-auto  mr-6 h-full max-sm:hidden "
         />
       </div>
     </div>

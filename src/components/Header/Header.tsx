@@ -45,13 +45,17 @@ const Header = () => {
   });
 
   return (
-    <div className=" h-10 flex my-6  justify-between px-6 font-[inter-bold]   ">
+    <div className=" h-10 flex my-6  justify-between px-6 font-[inter-bold] fixed top-0 left-0 right-0 z-50  text-[#CFCFCF] items-center">
       {/* Logo */}
-      <div className="h-full">
-        <Image src={Logo} alt="Logo" className="h-full w-10 min-md:w-20 min-md:h-20 rotate-clockwise" />
-      </div>
+      <div className="h-full" style={{ perspective: '1000px' }}>
+  <Image
+    src={Logo}
+    alt="Logo"
+    className="h-full w-10 min-md:w-20 min-md:h-20 flip-horizontal-360"
+  />
+</div>
 
-      <div className="flex gap-4 items-center ">
+      <div className="flex gap-4 items-center  ">
         {/* Navigation */}
         <nav className="hidden md:block">
           <ul className="inline-flex gap-6 justify-around ">
@@ -62,7 +66,7 @@ const Header = () => {
                   key={index}
                   onClick={() => router.push(item.href)}
                   className={`cursor-pointer  ${
-                    activeLink ? " underline text-[#FFFFFF]" : "text-[#CFCFCF]"
+                    activeLink ? " underline text-[#FFFFFF] bg-[#040725]" : "text-[#CFCFCF]"
                   }`}
                 >
                   {item.name}

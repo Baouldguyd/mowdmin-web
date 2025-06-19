@@ -17,7 +17,7 @@ const Footer = () => {
               <Image
                 src={Logo}
                 alt="Mowdministries Logo"
-                className="w-16 mb-4"
+                className="w-16 mb-4 rotate-clockwise"
               />
               <h2 className="text-lg font-[inter-semibold]">
                 Mowdministries e.V (Gospel of Salvation)

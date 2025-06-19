@@ -135,5 +135,22 @@ body {
 }
 
 .rotate-clockwise {
-  animation: spinClockwise 3s linear infinite;
+  animation: spinClockwise 5s linear infinite;
 }
+
+
+@keyframes flipY {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.flip-horizontal-360 {
+  animation: flipY 6s linear infinite;
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+}
+
