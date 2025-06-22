@@ -2,6 +2,8 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import eventBg from "@/assets/Images/closeupBg.png";
+import portraitImg from "@/assets/Images/Events/portraitEvent.png";
+import landScapeImg from "@/assets/Images/Events/landscapeEvent.png";
 
 const EventsHeroPage: React.FC = () => {
   // Set your fixed event date here (format: YYYY-MM-DDTHH:MM:SS)
@@ -56,9 +58,11 @@ const EventsHeroPage: React.FC = () => {
 
   return (
     <div className="min-h-[90svh] relative flex items-end justify-center">
-      {/* <Image src={eventBg} alt="" className="absolute h-full w-full" /> */}
-      <div className="bg-[#040725AD] h-[90svh] w-full z-[10]"></div>
-      <div className="bg-[#040725] rounded-lg w-[90%] z-[100] absolute -bottom-12 p-6 flex flex-col gap-4 h-auto">
+      <Image src={landScapeImg} alt="" className="absolute h-full w-full max-sm:hidden" />
+            <Image src={portraitImg} alt="" className="absolute h-full w-full " />
+
+      <div className=" h-[90svh] w-full z-[10]"></div>
+      <div className="bg-[#040725AD] rounded-lg w-[90%] z-[100] absolute -bottom-12 p-6 flex flex-col gap-4 h-auto">
         <p className="font-[inter-bold] text-center text-[22px] md:text-[2.2rem] text-[#fff]">
           Open air Evangelisation Hamm Westf. September 6, 2025
         </p>

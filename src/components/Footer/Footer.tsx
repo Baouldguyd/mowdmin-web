@@ -14,11 +14,13 @@ const Footer = () => {
           {/* Left Section: Organization Info */}
           <div>
             <div className=" flex gap-2 items-center">
-              <Image
-                src={Logo}
-                alt="Mowdministries Logo"
-                className="w-16 mb-4 rotate-clockwise"
-              />
+               <div className="h-full" style={{ perspective: '1000px' }}>
+                <Image
+                  src={Logo}
+                  alt="Logo"
+                  className="w-16 mb-4 flip-horizontal-360"
+                />
+              </div>
               <h2 className="text-lg font-[inter-semibold]">
                 Mowdministries e.V (Gospel of Salvation)
               </h2>
