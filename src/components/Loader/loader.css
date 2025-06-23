@@ -17,3 +17,11 @@
   80% {background-size: 20% 50% ,20% 50% ,20% 100%}
   100%{background-size: 20% 50% ,20% 50% ,20% 50% }
 }
+
+@media screen and (max-width: 768px) {
+  .loader {
+    width: 20px;
+    aspect-ratio: .75;
+  }
+  
+}

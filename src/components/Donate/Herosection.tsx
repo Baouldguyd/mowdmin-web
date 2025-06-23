@@ -21,7 +21,7 @@ export default function HeroSection() {
       <Image
         src={donateBg} // Save your image in `public/images/hero-man.png`
         alt="Donation hero"
-        className="w-full  h-full absolute"
+        className="w-full  h-full absolute blur-2xl"
       />
       <section className="bg-[#040725CC] text-white py-16 px-6 md:px-20 relative min-md:h-full ">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-1 items-center gap-12">

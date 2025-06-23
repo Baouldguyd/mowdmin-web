@@ -32,11 +32,11 @@ const Register = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className=" relative w-full h-[37rem]">
-              {/* <Image
+              <Image
                 src={crowd}
                 alt=""
-                className="absolute h-full w-full rounded-md  "
-              /> */}
+                className="absolute h-full w-full rounded-md blur-xl "
+              />
               <div className=" relative h-full flex flex-col gap-4 bg-[#00000071] rounded-md p-4 ">
                 <p className=" text-[4rem]  text-[#fff] font-[kalam-bold] w-[10rem] m-auto  ">
                   New here?

@@ -3,6 +3,7 @@ import Image from "next/image";
 import partnersBg from "@/assets/Images/partnersBg.jpg";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { BsArrowDownCircle } from "react-icons/bs";
 
 const PartnersHero = () => {
   const ref = useRef(null);
@@ -13,7 +14,7 @@ const PartnersHero = () => {
       <Image
         src={partnersBg} // Save your image in `public/images/hero-man.png`
         alt="Donation hero"
-        className="w-full h-full absolute"
+        className="w-full h-full absolute blur-2xl"
       />
       <section className="bg-[#040725CC] text-white py-16 px-6 md:px-20 relative h-full">
         <motion.div
@@ -34,11 +35,13 @@ const PartnersHero = () => {
               undertake this task together with us?
             </p>
 
+
             {/* CTA Buttons */}
             <div className="flex gap-4 flex-wrap">
-              <button className="red-button text-white px-6 py-3 rounded-md font-[inter-bold] hover:bg-red-700 transition">
+              {/* <button className="red-button text-white px-6 py-3 rounded-md font-[inter-bold] hover:bg-red-700 transition">
                 Become a Partner
-              </button>
+              </button> */}
+              <p className="text-[#CFCFCF]   text-base mb-8 md:text-[1.3rem] font-[inter-bold] flex items-center gap-2">Kindly Fill the form below <BsArrowDownCircle/></p>
             </div>
           </div>
         </motion.div>

@@ -27,7 +27,7 @@ const ShopsHeroPage = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}} // animate when in view
           transition={{ duration: 0.8, ease: "easeOut" }}
-         className=" w-[27rem] z-[100]  flex-col md:justify-between lg:justify-around flex max-sm:gap-4  my-auto mx-6 h-[70%] max-md:mt-14 max-sm:mt-6 ">
+         className=" w-[27rem] z-[50]  flex-col md:justify-between lg:justify-around flex max-sm:gap-4  my-auto mx-6 h-[70%] max-md:mt-14 max-sm:mt-6 ">
           <h1 className=" text-[#fff] font-[inter-bold] text-5xl leading-14 max-sm:text-4xl ">
             Get inspirational book and album filled with the Holy Spirit.
           </h1>

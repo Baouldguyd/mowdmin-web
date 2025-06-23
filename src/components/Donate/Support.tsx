@@ -15,7 +15,7 @@ const Support = () => {
   return (
     <div className=" min-h-[100svh] relative">
       {/* Image and bg */}
-      <Image src={supportBg} alt="" className="w-full h-full absolute " />
+      <Image src={supportBg} alt="" className="w-full h-full absolute blur-2xl " />
       <div className=" bg-[#040725CC] text-white flex justify-center items-center  relative h-full flex-col gap-6 ">
         <h1 className=" m-8 text-white font-[inter-bold] min-md:w-[40%] mx-auto text-[2rem] text-center">
           Would you like to donate to support these charitable projects?

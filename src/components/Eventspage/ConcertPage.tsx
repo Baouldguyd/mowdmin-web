@@ -12,7 +12,7 @@ const ConcertPage = () => {
 
   return (
     <div className="min-h-screen relative flex items-center justify-center bg-cover bg-center min-md:p-6">
-      {/* <Image src={peopleImg} alt="" className=" h-full w-fit absolute top-0 " /> */}
+      <Image src={peopleImg} alt="" className=" h-full max-w-4xl absolute top-0 blur-sm" />
       <div className="max-w-4xl w-full bg-opacity-90 bg-[#040725AD] z-10 text-white p-8 rounded-lg">
         <h1 className="text-4xl font-[inter-bold] text-center mb-4 ">
           Stay tuned for the next concert.

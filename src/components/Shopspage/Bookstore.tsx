@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { books } from "@/data/books";
 import { Book } from "@/types/Book";
 import Image from "next/image";
+import { BsArrowRightCircle } from "react-icons/bs";
 
 const BookStore = () => {
   const searchParams = useSearchParams();
@@ -59,7 +60,11 @@ const BookStore = () => {
             </div>
           ));
         })}
-      </div>
+      </div> 
+<div className=" flex justify-end w-full">
+              <p className="  flex items-center min-md:hidden gap-2">Swipe Left <BsArrowRightCircle/></p>
+
+</div>
 
       {/* Selected Book Info */}
       {selectedBook && (

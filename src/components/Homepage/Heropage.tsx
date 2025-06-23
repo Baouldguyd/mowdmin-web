@@ -34,7 +34,7 @@ const Heropage = () => {
             </p>
           </div>
           {/* Video Play Controls */}
-          <div className="  h-full min-md:w-[30%] my-auto flex items-center">
+          <div className="  h-full min-md:w-[30%] my-auto flex items-center max-sm:hidden">
             <button
               onClick={() => {
                 setIsPlaying(!isPlaying);

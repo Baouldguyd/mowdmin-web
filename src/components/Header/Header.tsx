@@ -148,7 +148,7 @@ const Header = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.95 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
-              className="   bg-[#000] p-6 rounded-md absolute right-0 top-10 "
+              className="   bg-[#000400AD] backdrop-blur-lg p-6 rounded-md absolute right-0 top-10 "
             >
               <ul className="flex flex-col gap-4 justify-center text-center ">
                 {navItems.map((item, index) => {

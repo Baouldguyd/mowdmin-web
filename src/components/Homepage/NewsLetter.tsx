@@ -13,7 +13,7 @@ const NewsLetter = () => {
   const isInView = useInView(ref, { once: true }); // animate only once
   return (
     <div className=" h-auto  flex font-[inter-regular]   relative ">
-      <Image src={background} alt="bg" className=" absolute top-0 h-full " />
+      <Image src={background} alt="bg" className=" absolute top-0 h-full  blur-2xl" />
       <div className="bg-[#04072599] z-[10]  w-full h-full flex justify-center items-center">
         <motion.div 
         ref={ref}

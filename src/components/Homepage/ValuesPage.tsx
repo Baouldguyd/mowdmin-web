@@ -21,7 +21,7 @@ const ValuesPage = () => {
     {
       name: "Worship",
       icon: <Worship />,
-      link: "/",
+      link: "/events",
     },
     {
       name: "Baptism",
@@ -87,13 +87,13 @@ const ValuesPage = () => {
           <Image
             src={crowd}
             alt="crowd"
-            className=" w-full h-[250px]  md:h-70 rounded-md"
+            className=" w-full h-[250px]  md:h-70 rounded-md blur-sm"
           />
           <div className=" h-[250px] md:h-70 absolute  top-10 left-10 max-sm:left-0 w-full rounded-md ">
             <Image
               src={crowd}
               alt="crowd"
-              className=" w-full h-full rounded-md"
+              className=" w-full h-full rounded-md blur-sm"
             />
             <div className=" absolute flex flex-col gap-4 top-0 p-4 bg-[#0000008a] rounded-md h-full w-full ">
               <p className=" w-[35%] md:text-2xl font-[inter-bold] text-[#fff]">
