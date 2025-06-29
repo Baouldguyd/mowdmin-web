@@ -17,7 +17,7 @@ const Register = () => {
  
  
   return (
-    <div className=" pt-12 bg-[#F8F8F8] md:min-h-screen h-auto grid grid-rows-[1fr_1fr] ">
+    <div className=" pt-12 bg-[#F8F8F8] md:min-h-screen h-auto grid grid-rows-[1fr_1fr] mt-50 min-md:mt-75 ">
       {/* Register Container */}
       <div className=" mx-6 mb-4 flex gap-2 flex-col md:flex-row  mt-4">
         {/* Form */}

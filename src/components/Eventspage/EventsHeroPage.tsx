@@ -62,14 +62,14 @@ const EventsHeroPage: React.FC = () => {
             <Image src={portraitImg} alt="" className="absolute h-full w-full min-md:hidden " />
 
       {/* <div className=" h-[90svh] w-full z-[10]"></div> */}
-      <div className="bg-[#040725AD] rounded-lg w-[90%] z-[100] absolute -bottom-12 p-6 flex flex-col gap-4 h-auto">
+      <div className="bg-[#040725AD] rounded-lg w-[90%] z-[100] absolute -bottom-60 min-md:-bottom-75 p-6 flex flex-col gap-4 h-auto">
         <p className="font-[inter-bold] text-center text-[22px] md:text-[2.2rem] text-[#fff]">
           Open air Evangelisation Hamm Westf. September 6, 2025
         </p>
-        <p className="text-center text-[#fff] min-md:hidden">
+        <p className="text-center text-[#fff] ">
          Event Countdown in:
         </p>
-        <div className="flex gap-8 mx-auto w-fit min-md:hidden">
+        <div className="flex gap-8 mx-auto w-fit ">
           {countDown.map((count, index) => (
             <div key={index} className="flex flex-col items-center">
               <div className="h-14 w-14 min-md:h-24 min-md:w-24 bg-[#FFFFFF] flex items-center justify-center rounded-full border-[#B3B3B3] border-4">
