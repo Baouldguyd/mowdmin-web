@@ -12,7 +12,7 @@ import pastEventsSeven from "@/assets/Images/pastEvents/pastEvents (7).png";
 import pastEventsEight from "@/assets/Images/pastEvents/pastEvents (8).png";
 import pastEventsNine from "@/assets/Images/pastEvents/pastEvents (9).png";
 import pastEventsTen from "@/assets/Images/pastEvents/pastEvents (10).png";
-
+import pastEventsEleven from "@/assets/Images/pastEvents/mowdPast.jpg";
 const PastEvents = () => {
   const eventImages = [
     pastEventsOne,
@@ -25,6 +25,7 @@ const PastEvents = () => {
     pastEventsEight,
     pastEventsNine,
     pastEventsTen,
+    pastEventsEleven
   ]
 
   return (
