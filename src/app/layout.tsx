@@ -1,12 +1,12 @@
 // app/layout.tsx
 import type { Metadata } from "next";
 import "./globals.css";
-import Script from "next/script";
+// import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Mowd Ministries",
   icons: {
-    icon: "/favicon.png",
+    icon: "/favicon.ico",
   },
   description: "Get Connected to Jesus",
 };
