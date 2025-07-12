@@ -31,7 +31,8 @@ const BookStore = () => {
   };
 
   return (
-    <div className="p-6">
+    <section id="book-store">
+      <div className="p-6">
       <h2 className="text-xl font-semibold my-8 min-md:text-2xl text-center">
         Explore our store and find your favorite books and CD albums available
         in three languages — <em>English, German, and French.</em>
@@ -120,6 +121,7 @@ const BookStore = () => {
         </div>
       )}
     </div>
+    </section>
   );
 };
 

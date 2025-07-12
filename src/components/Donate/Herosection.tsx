@@ -37,14 +37,15 @@ export default function HeroSection() {
               Charitable deeds
             </p>
             <h1 className="text-4xl min-lg:text-[3.5rem] font-bold leading-tight mb-6">
-              Only by supporting one <br />
-              another can we make the <br />
-              world a better place.
+              Mowdministries exclusively  <br />
+              and directly pursues <br />
+              charitable and religious purposes  <br />
+              within the meaning of the tax
+              code.
             </h1>
             <p className="text-[#CFCFCF] border-l-4 border-red-600 pl-4 text-base mb-8 md:text-[1.3rem] font-[inter-bold]">
-              Mowdministries exclusively and directly pursues <br />
-              charitable and religious purposes within the meaning of the tax
-              code.
+              It is with grateful hearts that we thank our donors. <br />
+             
             </p>
 
             {/* CTA Buttons */}

@@ -59,7 +59,7 @@ const ConcertPage = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="mt-6 bg-white w-auto text-black min-md:p-6 rounded-lg shadow-lg md:w-[50%] "
           >
-            <Countdown eventDate="2025-12-25T00:00:00" />
+            <Countdown eventDate="2025-09-07T00:00:00" />
             <p className="text-center text-gray-600 my-4">
               Please fill out the registration form here
             </p>

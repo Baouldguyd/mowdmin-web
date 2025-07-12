@@ -118,9 +118,9 @@ const Footer = () => {
         <div className="border-t border-gray-600 items-center justify-between mt-10 text-sm flex  py-4 md:px-6 max-sm:flex-col max-sm:gap-4">
           <p>© 2004 - {currentYear} Mowdministries e.V - All rights reserved</p>
           <div className=" flex justify-center gap-4">
-            <span>
+            {/* <span>
               <a href="/privacy-policy">Privacy & Policy</a>
-            </span>
+            </span> */}
             {/* <span><a href="https://isabitech.com.ng" target="_blank" referrerPolicy="no-referrer">  Powered by iSabi Technologies</a></span> */}
           </div>
           <div className="flex gap-4 ">

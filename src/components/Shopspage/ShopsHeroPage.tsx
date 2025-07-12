@@ -6,7 +6,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useRouter } from "next/navigation";
 import ebendbildes from "@/assets/Images/ebenbildes.png";
-
+import { scroller } from "react-scroll";
 
 const ShopsHeroPage = () => {
   const ref = useRef(null);
@@ -15,9 +15,17 @@ const ShopsHeroPage = () => {
   const router = useRouter();
 
   const handleBuyNow = () => {
-    router.push(`/shops?bookid=10`);
-  };
- 
+  // Scroll to the target section
+  scroller.scrollTo("book-store", {
+    duration: 500,
+    smooth: true,
+    offset: -50, // Optional: adjust for fixed headers
+  });
+
+  // Push the bookid to the URL without scrolling
+  router.push("/shops?bookid=10", { scroll: false });
+};
+
   return (
     <div className=" bg-[#040725E5] relative max-sm:min-h-[50svh] flex min-h-[70svh]  ">
       <div className="bg-[#040725E5] h-full w-full z-[10] absolute"> </div>
@@ -27,7 +35,8 @@ const ShopsHeroPage = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}} // animate when in view
           transition={{ duration: 0.8, ease: "easeOut" }}
-         className=" w-[27rem] z-[50]  flex-col md:justify-between lg:justify-around flex max-sm:gap-4  my-auto mx-6 h-[70%] max-md:mt-14 max-sm:mt-6 ">
+          className=" w-[27rem] z-[50]  flex-col md:justify-between lg:justify-around flex max-sm:gap-4  my-auto mx-6 h-[70%] max-md:mt-14 max-sm:mt-6 "
+        >
           <h1 className=" text-[#fff] font-[inter-bold] text-5xl leading-14 max-sm:text-4xl ">
             Get inspirational book and album filled with the Holy Spirit.
           </h1>
@@ -36,12 +45,13 @@ const ShopsHeroPage = () => {
             Spirit can meet all types of needs.
           </p>
           <div className="">
-            <button
-            onClick={handleBuyNow}
-              type="button"
-            className=" red-button mt-6 font-[inter-bold] ">
-              Buy Now
-            </button>
+             <button
+                onClick={handleBuyNow}
+                type="button"
+                className=" red-button mt-6 font-[inter-bold] "
+              >
+                Buy Now
+              </button>
           </div>
         </motion.div>
         {/* <div className=""></div> */}
