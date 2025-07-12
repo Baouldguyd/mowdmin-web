@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import shopsBg from "@/assets/Images/shopsBg.png";
+// import shopsBg from "@/assets/Images/shopsBg.png";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { useRouter } from "next/navigation";

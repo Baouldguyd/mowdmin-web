@@ -14,7 +14,7 @@ const DonationsInfo = () => {
       className=" p-4 flex justify-center items-center my-4 "
     >
       <div className="text-center">
-        <h2 className=" font-bold text-lg">By Bank Transfer:</h2>
+        <h2 className=" font-bold text-lg min-md:text-2xl">Donate By Bank Transfer</h2>
         <p>
           <strong>KD Bank</strong>
         </p>
@@ -25,16 +25,18 @@ const DonationsInfo = () => {
         <h2>Via Stripe or PayPal:</h2>
 
         <div className=" flex max-sm:flex-col">
+          <a href="https://donate.stripe.com/bIY2aqg7R0Z9c6YaEH" target="_blank" rel="noopener noreferrer">
           <img
             src="https://memberpress.com/wp-content/uploads/2017/09/Integrations-Stripe-1724x970-1.svg"
             alt="Secure Payments Powered by Stripe"
-            className="max-w-[250px]"
-          />
+            className="max-w-[250px] hover:bg-[#333] hover:rounded-lg"
+          /></a>
+        <a href="https://www.paypal.com/paypalme/Mowdministries?country.x=US&locale.x=en_US" target="_blank" rel="noopener noreferrer">
           <img
             src="https://www.top-bank.ch/images/logo_540/paypal.png"
             alt="Credit Cards"
-            className="max-w-[250px]"
-          />
+            className="max-w-[250px] hover:bg-[#333] hover:rounded-lg"
+          /></a>
         </div>
 
         <h3 className="font-semibold">Purpose of Donations:</h3>

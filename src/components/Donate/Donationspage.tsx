@@ -12,7 +12,7 @@ const Donationspage = () => {
       <HeroSection />
       {/* <DonationInfo /> */}
       <CharityActivities />
-      <Support />
+      {/* <Support /> */}
       <DonationsInfo/>
       <Purpose/>
     </div>

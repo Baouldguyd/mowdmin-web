@@ -19,8 +19,8 @@ const ContactPage = () => {
             Simply fill out the contact form and we will get back to you as
             quickly as possible. Of course, you can also reach us by phone or
             via email at{" "}
-            <a href="mailto:info@mowdministries.org" className=" underline">
-              info@mowdministries.org
+            <a href="mailto:contact@mowdministries.org" className=" underline">
+              contact@mowdministries.org
             </a>
             . We look forward to seeing you!
           </p>
