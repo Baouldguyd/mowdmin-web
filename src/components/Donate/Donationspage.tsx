@@ -5,6 +5,7 @@ import CharityActivities from "./CharityActivities ";
 import Support from "./Support";
 import Purpose from "./Purpose";
 import DonationsInfo from "./DonationsInfo";
+import DonationIframe from "../Eventspage/BetterCard";
 
 const Donationspage = () => {
   return (
@@ -13,6 +14,7 @@ const Donationspage = () => {
       {/* <DonationInfo /> */}
       <CharityActivities />
       {/* <Support /> */}
+      <DonationIframe/>
       <DonationsInfo/>
       <Purpose/>
     </div>
